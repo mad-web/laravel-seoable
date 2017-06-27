@@ -37,7 +37,7 @@ class SeoableServiceProvider extends ServiceProvider
         $this->loadTranslationsFrom(__DIR__.'/../resources/lang', 'seoable');
 
         $this->publishes([
-            __DIR__.'/../resources/lang' => resource_path('lang/vendor/social-auth'),
+            __DIR__.'/../resources/lang' => resource_path('lang/vendor/seoable'),
         ], 'lang');
     }
 }
