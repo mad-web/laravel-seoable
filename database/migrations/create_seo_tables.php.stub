@@ -1,0 +1,35 @@
+<?php
+
+use Illuminate\Support\Facades\Schema;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Database\Migrations\Migration;
+
+class CreateSeoTables extends Migration
+{
+    /**
+     * Run the migrations.
+     *
+     * @return void
+     */
+    public function up()
+    {
+        Schema::create(config('seoable.table_names.models'), function (Blueprint $table) {
+            $table->increments('id');
+            $table->morphs('seoable');
+            $table->json('meta');
+            $table->json('open_graph');
+            $table->json('twitter');
+            $table->timestamps();
+        });
+    }
+
+    /**
+     * Reverse the migrations.
+     *
+     * @return void
+     */
+    public function down()
+    {
+        Schema::dropIfExists(config('seoable.table_names.models'));
+    }
+}

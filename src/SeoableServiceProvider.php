@@ -33,6 +33,15 @@ class SeoableServiceProvider extends ServiceProvider
             __DIR__.'/../config/skeleton.php' => config_path('seoable.php'),
         ], 'config');
 
+        // Database
+        if (! class_exists('CreateSeoTables')) {
+            // Publish the migration
+            $timestamp = date('Y_m_d_His', time());
+            $this->publishes([
+                __DIR__.'/../database/migrations/create_seo_tables.php.stub' => $this->app->databasePath().'/migrations/'.$timestamp.'_create_seo_tables.php',
+            ], 'migrations');
+        }
+
         // Translations
         $this->loadTranslationsFrom(__DIR__.'/../resources/lang', 'seoable');
 
