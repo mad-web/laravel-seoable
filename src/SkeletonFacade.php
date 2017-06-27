@@ -1,11 +1,11 @@
 <?php
 
-namespace ZFort\Skeleton;
+namespace ZFort\Seoable;
 
 use Illuminate\Support\Facades\Facade;
 
 /**
- * @see \ZFort\Skeleton\SkeletonClass
+ * @see \ZFort\Seoable\SkeletonClass
  */
 class SkeletonFacade extends Facade
 {

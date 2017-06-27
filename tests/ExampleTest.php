@@ -1,6 +1,6 @@
 <?php
 
-namespace ZFort\Skeleton\Test;
+namespace ZFort\Seoable\Test;
 
 use Orchestra\Testbench\TestCase;
 
@@ -35,7 +35,7 @@ class ExampleTest extends TestCase
      */
     protected function getPackageProviders($app)
     {
-        return [\ZFort\Skeleton\SkeletonServiceProvider::class];
+        return [\ZFort\Skeleton\SeoableServiceProvider::class];
     }
 
     /**
