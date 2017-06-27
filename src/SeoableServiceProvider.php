@@ -34,11 +34,11 @@ class SeoableServiceProvider extends ServiceProvider
         ], 'config');
 
         // Database
-        if (! class_exists('CreateSeoTables')) {
+        if (! class_exists('CreateSeoTable')) {
             // Publish the migration
             $timestamp = date('Y_m_d_His', time());
             $this->publishes([
-                __DIR__.'/../database/migrations/create_seo_tables.php.stub' => $this->app->databasePath().'/migrations/'.$timestamp.'_create_seo_tables.php',
+                __DIR__.'/../database/migrations/create_seo_table.php.stub' => $this->app->databasePath().'/migrations/'.$timestamp.'_create_seo_table.php',
             ], 'migrations');
         }
 

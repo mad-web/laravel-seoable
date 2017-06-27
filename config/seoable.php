@@ -2,6 +2,6 @@
 
 return [
     'table_names' => [
-        'models' => 'seo_models'
+        'seo_data' => 'seo_data'
     ]
 ];

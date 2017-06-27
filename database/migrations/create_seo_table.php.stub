@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateSeoTables extends Migration
+class CreateSeoTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CreateSeoTables extends Migration
      */
     public function up()
     {
-        Schema::create(config('seoable.table_names.models'), function (Blueprint $table) {
+        Schema::create(config('seoable.table_names.seo_data'), function (Blueprint $table) {
             $table->increments('id');
             $table->morphs('seoable');
             $table->json('meta');
@@ -30,6 +30,6 @@ class CreateSeoTables extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists(config('seoable.table_names.models'));
+        Schema::dropIfExists(config('seoable.table_names.seo_data'));
     }
 }
