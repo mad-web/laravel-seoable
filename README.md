@@ -7,8 +7,6 @@
 [![Quality Score][ico-code-quality]][link-code-quality]
 [![Total Downloads][ico-downloads]][link-downloads]
 
-**Note:** Replace ```:author_name``` ```:author_username``` ```:author_email``` ```:package_name``` ```:package_description``` with their correct values in [README.md](README.md), [CHANGELOG.md](CHANGELOG.md), [CONTRIBUTING.md](CONTRIBUTING.md), [LICENSE.md](LICENSE.md) and [composer.json](composer.json) files, then delete this line.
-
 This is where your description should go. Try and limit it to a paragraph or two, and maybe throw in a mention of what PSRs you support to avoid any confusion with users and contributors.
 
 ## Postcardware
@@ -43,7 +41,7 @@ This package is custom built for [ZFort](https://zfort.com) projects and is ther
 You can install the package via composer:
 
 ```bash
-composer require zfort/:package_name
+composer require zfort/laravel-seoable
 ```
 
 ## Usage
@@ -73,7 +71,7 @@ If you discover any security related issues, please email developer@zfort.com in
 
 ## Credits
 
-- [:author_name](https://github.com/:author_username)
+- [ZFort](https://github.com/zfort)
 - [All Contributors](../../contributors)
 
 ## About ZFort
@@ -84,17 +82,17 @@ ZFort Group is a full-scale IT outsourcing service provider that has delivered p
 
 The MIT License (MIT). Please see [License File](LICENSE.md) for more information.
 
-[ico-version]: https://img.shields.io/packagist/v/zfort/:package_name.svg?style=flat-square
+[ico-version]: https://img.shields.io/packagist/v/zfort/laravel-seoable.svg?style=flat-square
 [ico-license]: https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square
-[ico-travis]: https://img.shields.io/travis/zfort/:package_name/master.svg?style=flat-square
-[ico-scrutinizer]: https://img.shields.io/scrutinizer/coverage/g/zfort/:package_name.svg?style=flat-square
-[ico-code-quality]: https://img.shields.io/scrutinizer/g/zfort/:package_name.svg?style=flat-square
-[ico-downloads]: https://img.shields.io/packagist/dt/zfort/:package_name.svg?style=flat-square
+[ico-travis]: https://img.shields.io/travis/zfort/laravel-seoable/master.svg?style=flat-square
+[ico-scrutinizer]: https://img.shields.io/scrutinizer/coverage/g/zfort/laravel-seoable.svg?style=flat-square
+[ico-code-quality]: https://img.shields.io/scrutinizer/g/zfort/laravel-seoable.svg?style=flat-square
+[ico-downloads]: https://img.shields.io/packagist/dt/zfort/laravel-seoable.svg?style=flat-square
 
-[link-packagist]: https://packagist.org/packages/zfort/:package_name
-[link-travis]: https://travis-ci.org/zfort/:package_name
-[link-scrutinizer]: https://scrutinizer-ci.com/g/zfort/:package_name/code-structure
-[link-code-quality]: https://scrutinizer-ci.com/g/zfort/:package_name
-[link-downloads]: https://packagist.org/packages/zfort/:package_name
-[link-author]: https://github.com/:author_username
+[link-packagist]: https://packagist.org/packages/zfort/laravel-seoable
+[link-travis]: https://travis-ci.org/zfort/laravel-seoable
+[link-scrutinizer]: https://scrutinizer-ci.com/g/zfort/laravel-seoable/code-structure
+[link-code-quality]: https://scrutinizer-ci.com/g/zfort/laravel-seoable
+[link-downloads]: https://packagist.org/packages/zfort/laravel-seoable
+[link-author]: https://github.com/zfort
 [link-contributors]: ../../contributors

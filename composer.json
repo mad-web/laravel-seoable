@@ -1,36 +1,40 @@
 {
-    "name": "zfort/:package_name",
-    "description": ":package_description",
+    "name": "zfort/laravel-seoable",
+    "description": "Easy to map your eloquent fields to seo properties",
     "type": "library",
     "keywords": [
         "zfort",
-        ":package_name"
+        "laravel-seoable",
+        "seo"
     ],
-    "homepage": "https://github.com/zfort/:package_name",
+    "homepage": "https://github.com/zfort/laravel-seoable",
     "license": "MIT",
     "authors": [
         {
-            "name": ":author_name",
+            "name": "ZFort",
             "email": "developer@zfort.com",
             "homepage": "https://zfort.com",
             "role": "Developer"
         }
     ],
     "require": {
-        "php": "^7.1"
+        "php": "^7.1",
+        "illuminate/support": "^5.4",
+        "artesaos/seotools": "^0.10.0"
     },
     "require-dev": {
-        "phpunit/phpunit": "^6.0",
-        "orchestra/testbench": "~3.0"
+        "mockery/mockery": "^0.9.9",
+        "orchestra/testbench": "~3.0",
+        "phpunit/phpunit": "^6.0"
     },
     "autoload": {
         "psr-4": {
-            "ZFort\\Skeleton\\": "src"
+            "ZFort\\Seoable\\": "src"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "ZFort\\Skeleton\\Test\\": "tests"
+            "ZFort\\Seoable\\Test\\": "tests"
         }
     },
     "scripts": {
@@ -42,10 +46,10 @@
     "extra": {
         "laravel": {
             "providers": [
-                "ZFort\\Skeleton\\SkeletonServiceProvider"
+                "ZFort\\Seoable\\SeoableServiceProvider"
             ],
             "aliases": {
-                "Skeleton": "ZFort\\Skeleton\\SkeletonFacade"
+                "Skeleton": "ZFort\\Seoable\\SeoableFacade"
             }
         }
     }
