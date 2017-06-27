@@ -35,7 +35,7 @@ class ExampleTest extends TestCase
      */
     protected function getPackageProviders($app)
     {
-        return [\ZFort\Skeleton\SeoableServiceProvider::class];
+        return [\ZFort\Seoable\SeoableServiceProvider::class];
     }
 
     /**
@@ -45,7 +45,7 @@ class ExampleTest extends TestCase
     protected function getPackageAliases($app)
     {
         return [
-            'Skeleton' => \ZFort\Skeleton\SkeletonFacade::class
+            'Skeleton' => \ZFort\Seoable\SkeletonFacade::class
         ];
     }
 }
