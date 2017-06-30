@@ -11,7 +11,7 @@ class SeoableServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        if ($this->app->runningInConsole()) {
+        if (! $this->app->runningInConsole()) {
             $this->registerResources();
         }
 
@@ -30,7 +30,7 @@ class SeoableServiceProvider extends ServiceProvider
     {
         // Config
         $this->publishes([
-            __DIR__.'/../config/skeleton.php' => config_path('seoable.php'),
+            __DIR__.'/../config/seoable.php' => config_path('seoable.php'),
         ], 'config');
 
         // Database
