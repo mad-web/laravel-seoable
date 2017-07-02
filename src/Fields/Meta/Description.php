@@ -2,6 +2,7 @@
 
 namespace ZFort\Seoable\Fields\Meta;
 
+use ZFort\Seoable\Fields\Field;
 use ZFort\Seoable\Fields\WithTemplates;
 
 class Description extends Field
