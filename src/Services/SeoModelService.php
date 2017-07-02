@@ -76,7 +76,7 @@ class SeoModelService
      */
     protected function mergeData()
     {
-        $this->data = (object)[
+        $this->data = (object)[//TODO: refactor raw attributes replacing
             'parse' => (array)$this->model->seoable(),
             'raw' => (array)$this->model->getSeoData()
         ];
@@ -98,10 +98,20 @@ class SeoModelService
             $this->processRawFields($this->data->parse['open_graph'], $this->data->raw['open_graph']);
         }
 
-        foreach ($this->data->raw as $field => $value) {
-            if (isset($this->data->parse[$field])) {
-                unset($this->data->parse[$field]);
+        $this->mergeWithDbData($this->data->raw, $this->data->parse);
+
+        if (isset($this->data->raw['twitter_card'])) {
+            if (! isset($this->data->parse['twitter_card'])) {
+                $this->data->parse['twitter_card'] = [];
             }
+            $this->mergeWithDbData($this->data->raw['twitter_card'], $this->data->parse['twitter_card']);
+        }
+
+        if (isset($this->data->raw['open_graph'])) {
+            if (! isset($this->data->parse['open_graph'])) {
+                $this->data->parse['open_graph'] = [];
+            }
+            $this->mergeWithDbData($this->data->raw['open_graph'], $this->data->parse['open_graph']);
         }
     }
 
@@ -130,6 +140,18 @@ class SeoModelService
                 if (! isset($rawFields[$field_name])) {
                     $rawFields[$field_name] = $item;
                 }
+                unset($parseFields[$field]);
+            }
+        }
+    }
+
+    protected function mergeWithDbData(array &$rawFields, array &$parseFields)
+    {
+        foreach ($rawFields as $field => $value) {
+            if (in_array($field, ['twitter_card', 'open_graph'])) {
+                continue;
+            }
+            if (isset($parseFields[$field])) {
                 unset($parseFields[$field]);
             }
         }
