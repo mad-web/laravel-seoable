@@ -30,18 +30,18 @@ vendor/
 ```
 
 ## Installation
-
-**Note:** Remove this paragraph if you are building a public package  
-This package is custom built for [ZFort](https://zfort.com) projects and is therefore not registered on packagist. In order to install it via composer you must specify this extra repository in `composer.json`:
-
-```json
-"repositories": [ { "type": "composer", "url": "https://satis.zfort.com/" } ]
-```
-
 You can install the package via composer:
 
 ```bash
 composer require zfort/laravel-seoable
+```
+
+Now add the service provider in config/app.php file:
+```php
+'providers' => [
+    // ...
+    ZFort\Seoable\SeoableServiceProvider::class,
+];
 ```
 
 ## Usage
