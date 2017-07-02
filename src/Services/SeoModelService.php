@@ -82,14 +82,20 @@ class SeoModelService
         ];
 
         // Process raw filed from model configuration
-        foreach ($this->data->parse as $field => $item) {
-            if (ends_with($field, '_raw')) {
-                $field_name = strstr($field, '_raw', true);
-                if (! isset($this->data->raw[$field_name])) {
-                    $this->data->raw[$field_name] = $item;
-                }
-                unset($this->data->parse[$field]);
+        $this->processRawFields($this->data->parse, $this->data->raw);
+
+        if (isset($this->data->parse['twitter_card'])) {
+            if (! isset($this->data->raw['twitter_card'])) {
+                $this->data->raw['twitter_card'] = [];
             }
+            $this->processRawFields($this->data->parse['twitter_card'], $this->data->raw['twitter_card']);
+        }
+
+        if (isset($this->data->parse['open_graph'])) {
+            if (! isset($this->data->raw['open_graph'])) {
+                $this->data->raw['open_graph'] = [];
+            }
+            $this->processRawFields($this->data->parse['open_graph'], $this->data->raw['open_graph']);
         }
 
         foreach ($this->data->raw as $field => $value) {
@@ -109,6 +115,23 @@ class SeoModelService
     {
         foreach ($config as $field => $value) {
             $protocol->{'set' . studly_case($field)}($value);
+        }
+    }
+
+    /**
+     * @param array $parseFields
+     * @param array $rawFields
+     */
+    protected function processRawFields(array &$parseFields, array &$rawFields)
+    {
+        foreach ($parseFields as $field => $item) {
+            if (ends_with($field, '_raw')) {
+                $field_name = strstr($field, '_raw', true);
+                if (! isset($rawFields[$field_name])) {
+                    $rawFields[$field_name] = $item;
+                }
+                unset($parseFields[$field]);
+            }
         }
     }
 }
