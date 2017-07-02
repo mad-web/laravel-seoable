@@ -11,9 +11,12 @@ class SeoableServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        if (! $this->app->runningInConsole()) {
-            $this->registerResources();
+        if ($this->app->runningInConsole()) {
+            $this->publishResources();
         }
+
+        // Translations
+        $this->loadTranslationsFrom(__DIR__.'/../resources/lang', 'seoable');
 
         $this->app->register(\Artesaos\SEOTools\Providers\SEOToolsServiceProvider::class);
     }
@@ -26,7 +29,7 @@ class SeoableServiceProvider extends ServiceProvider
         $this->mergeConfigFrom(__DIR__.'/../config/seoable.php', 'seoable');
     }
 
-    protected function registerResources()
+    protected function publishResources()
     {
         // Config
         $this->publishes([
@@ -41,9 +44,6 @@ class SeoableServiceProvider extends ServiceProvider
                 __DIR__.'/../database/migrations/create_seo_table.php.stub' => $this->app->databasePath().'/migrations/'.$timestamp.'_create_seo_table.php',
             ], 'migrations');
         }
-
-        // Translations
-        $this->loadTranslationsFrom(__DIR__.'/../resources/lang', 'seoable');
 
         $this->publishes([
             __DIR__.'/../resources/lang' => resource_path('lang/vendor/seoable'),
