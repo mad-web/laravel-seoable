@@ -67,7 +67,7 @@ class SeoModelService
         }
 
         if (isset($data['twitter_card'])) {
-            $this->process($twitterCard,$data['twitter_card']);
+            $this->process($twitterCard, $data['twitter_card']);
         }
     }
 
@@ -80,6 +80,17 @@ class SeoModelService
             'parse' => (array)$this->model->seoable(),
             'raw' => (array)$this->model->getSeoData()
         ];
+
+        // Process raw filed from model configuration
+        foreach ($this->data->parse as $field => $item) {
+            if (ends_with($field, '_raw')) {
+                $field_name = strstr($field, '_raw', true);
+                if (! isset($this->data->raw[$field_name])) {
+                    $this->data->raw[$field_name] = $item;
+                }
+                unset($this->data->parse[$field]);
+            }
+        }
 
         foreach ($this->data->raw as $field => $value) {
             if (isset($this->data->parse[$field])) {
