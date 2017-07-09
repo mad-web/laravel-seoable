@@ -2,13 +2,13 @@
 
 namespace ZFort\Seoable\Protocols;
 
-use ZFort\Seoable\Fields\TwitterCard\Description;
-use ZFort\Seoable\Fields\TwitterCard\Images;
-use ZFort\Seoable\Fields\TwitterCard\Site;
-use ZFort\Seoable\Fields\TwitterCard\Title;
-use ZFort\Seoable\Fields\TwitterCard\Type;
 use ZFort\Seoable\Fields\TwitterCard\Url;
+use ZFort\Seoable\Fields\TwitterCard\Site;
+use ZFort\Seoable\Fields\TwitterCard\Type;
+use ZFort\Seoable\Fields\TwitterCard\Title;
+use ZFort\Seoable\Fields\TwitterCard\Images;
 use ZFort\Seoable\Fields\TwitterCard\Values;
+use ZFort\Seoable\Fields\TwitterCard\Description;
 
 class TwitterCard extends Protocol
 {

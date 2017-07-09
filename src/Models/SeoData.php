@@ -13,7 +13,7 @@ class SeoData extends Model implements SeoDataContract
     protected $fillable = [
         'meta',
         'open_graph',
-        'twitter'
+        'twitter',
     ];
 
     /**

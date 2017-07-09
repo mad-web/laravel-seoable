@@ -2,11 +2,11 @@
 
 namespace ZFort\Seoable\Traits;
 
-use Artesaos\SEOTools\Traits\SEOTools;
 use ZFort\Seoable\Contracts\Seoable;
+use Artesaos\SEOTools\Traits\SEOTools;
 
 /**
- * This trait is for usage with controllers
+ * This trait is for usage with controllers.
  */
 trait SeoControls
 {

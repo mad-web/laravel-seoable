@@ -3,8 +3,8 @@
 namespace ZFort\Seoable\Protocols;
 
 use BadMethodCallException;
-use Illuminate\Database\Eloquent\Model;
 use ZFort\Seoable\Contracts\Seoable;
+use Illuminate\Database\Eloquent\Model;
 
 abstract class Protocol
 {
@@ -27,12 +27,12 @@ abstract class Protocol
     public function __construct(Seoable $model)//TODO: model refactor
     {
         $this->model = $model;
-        $this->modelSeoData = (array)$this->model->getSeoData();
+        $this->modelSeoData = (array) $this->model->getSeoData();
 
         $this->seoTools = resolve('seotools');
         $this->metaService = resolve('seotools.metatags');
         $this->openGraphService = resolve('seotools.opengraph');
-        $this->twitterCardService = resolve('seotools.twitter');//TODO: resolve method ability
+        $this->twitterCardService = resolve('seotools.twitter'); //TODO: resolve method ability
     }
 
     protected function parseValue($value, string $type)
@@ -45,7 +45,7 @@ abstract class Protocol
     {
         if (ends_with($name, 'Raw')) {
             $this->isRaw = true;
-            $this->{strstr($name, 'Raw', true)}(...$arguments);
+            $this->{mb_strstr($name, 'Raw', true)}(...$arguments);
             $this->isRaw = false;
 
             return $this;
