@@ -1,10 +1,10 @@
 <?php
 
-namespace ZFort\Seoable\Fields\Meta;
+namespace ZFort\Seoable\Fields\TwitterCard;
 
 use ZFort\Seoable\Fields\Field;
 
-class TitleSeparator extends Field
+class Type extends Field
 {
     protected function parseValue($value): string
     {

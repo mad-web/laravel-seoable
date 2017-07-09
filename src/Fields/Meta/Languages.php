@@ -2,6 +2,8 @@
 
 namespace ZFort\Seoable\Fields\Meta;
 
+use ZFort\Seoable\Fields\Field;
+
 class Languages extends Field
 {
     protected function parseValue($value): array

@@ -2,6 +2,8 @@
 
 namespace ZFort\Seoable\Fields\Meta;
 
+use ZFort\Seoable\Fields\Field;
+
 class Prev extends Field
 {
     protected function parseValue($value): string

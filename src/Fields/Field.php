@@ -1,6 +1,6 @@
 <?php
 
-namespace ZFort\Seoable\Fields\Meta;
+namespace ZFort\Seoable\Fields;
 
 abstract class Field
 {
