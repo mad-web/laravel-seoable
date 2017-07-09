@@ -2,6 +2,8 @@
 
 namespace ZFort\Seoable\Traits;
 
+use ZFort\Seoable\Protocols\Meta;
+
 /**
  * This trait is for usage in models
  */
@@ -35,5 +37,10 @@ trait SeoableTrait
     public function getSeoData()
     {
         return $this->seoData->getSeoData();
+    }
+
+    protected function seo()
+    {
+        return new Meta($this);
     }
 }

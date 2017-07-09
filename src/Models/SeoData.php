@@ -20,9 +20,9 @@ class SeoData extends Model implements SeoDataContract
      * @var array
      */
     protected $casts = [
-        'meta' => 'object',
-        'open_graph' => 'object',
-        'twitter' => 'object',
+        'meta' => 'array',
+        'open_graph' => 'array',
+        'twitter' => 'array',
     ];
 
     public function __construct(array $attributes = [])
@@ -49,7 +49,7 @@ class SeoData extends Model implements SeoDataContract
 
     public function getTwitterCard()
     {
-        return $this->getAttribute('twitter_card');
+        return $this->getAttribute('twitter');
     }
 
     public function getSeoData()//TODO: refactor
@@ -58,13 +58,9 @@ class SeoData extends Model implements SeoDataContract
         $open_graph = $this->getOpenGraph();
         $twitter_card = $this->getTwitterCard();
 
-        if (! empty($open_graph)) {
-            $meta += ['open_graph' => $open_graph];
-        }
+        $meta += ['open_graph' => ! empty($open_graph) ? $open_graph : []];
 
-        if (! empty($twitter_card)) {
-            $meta += ['twitter_card' => $twitter_card];
-        }
+        $meta += ['twitter_card' => ! empty($twitter_card) ? $twitter_card : []];
 
         return $meta;
     }

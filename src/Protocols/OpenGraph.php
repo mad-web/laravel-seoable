@@ -30,7 +30,13 @@ class OpenGraph extends Protocol
     }
 
     public function setProperties($value)
+
     {
 
+    }
+
+    protected function getRawFields(): array
+    {
+        return $this->modelSeoData['open_graph'];
     }
 }
