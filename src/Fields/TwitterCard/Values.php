@@ -10,7 +10,6 @@ class Values extends Field
     {
         foreach ($value as &$item) {
             $item['value'] = $this->model->getAttribute($item['value']);
-            $item = array_values($item);
         }
 
         return $value;

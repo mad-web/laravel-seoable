@@ -12,7 +12,7 @@ class Title extends Field
     protected function parseValue($value): string
     {
         return trans(
-            $this->getTemplatePath(get_class($this->model) . '.twitter_card'),
+            $this->getTemplatePath(get_class($this->model).'.twitter_card'),
             $this->parseAttributesWithKeys($value)
         );
     }
