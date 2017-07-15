@@ -15,9 +15,9 @@ use ZFort\Seoable\Fields\Meta\TitleSeparator;
 /**
  * @method Meta setMetaRaw(array $value)
  * @method Meta addMetaRaw(string $meta, string $value, string $name = 'name')
- * @method Meta setTitleRaw(array|string $value)
+ * @method Meta setTitleRaw(string $value)
  * @method Meta setTitleSeparatorRaw(string $value)
- * @method Meta setDescriptionRaw(array|string $value)
+ * @method Meta setDescriptionRaw(string $value)
  * @method Meta setCanonicalRaw(string $value)
  * @method Meta setPrevRaw(string $value)
  * @method Meta setNextRaw(string $value)
