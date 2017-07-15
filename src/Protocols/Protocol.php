@@ -8,9 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 
 abstract class Protocol
 {
-    /**
-     * @var Model|\ZFort\Seoable\Contracts\Seoable
-     */
+    /** @var Model|\ZFort\Seoable\Contracts\Seoable */
     protected $model;
 
     /** @var array */
@@ -31,7 +29,7 @@ abstract class Protocol
     protected $isRaw = false;
 
     /** @param Model|\ZFort\Seoable\Contracts\Seoable $model */
-    public function __construct(Seoable $model)//TODO: model refactor
+    public function __construct(Seoable $model)
     {
         $this->model = $model;
         $this->modelSeoData = (array) $this->model->getSeoData();
