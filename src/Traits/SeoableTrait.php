@@ -34,7 +34,7 @@ trait SeoableTrait
      *
      * @return mixed
      */
-    public function getSeoData()
+    public function getSeoData()//TODO: refactor
     {
         return $this->seoData->getSeoData();
     }

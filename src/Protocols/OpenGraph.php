@@ -20,9 +20,7 @@ use ZFort\Seoable\Fields\OpenGraph\Description;
  */
 class OpenGraph extends Protocol
 {
-    /**
-     * @param array|string $value
-     */
+    /** @param array|string $value */
     public function setTitle($value): self
     {
         $this->openGraphService->setTitle($this->parseValue($value, Title::class));
@@ -30,9 +28,7 @@ class OpenGraph extends Protocol
         return $this;
     }
 
-    /**
-     * @param array|string $value
-     */
+    /** @param array|string $value */
     public function setDescription($value): self
     {
         $this->openGraphService->setDescription($this->parseValue($value, Description::class));
@@ -54,9 +50,7 @@ class OpenGraph extends Protocol
         return $this;
     }
 
-    /**
-     * @param array|string $images
-     */
+    /** @param array|string $images */
     public function setImages($images): self
     {
         $this->openGraphService->addImages([$this->parseValue($images, Images::class)]);
@@ -73,9 +67,7 @@ class OpenGraph extends Protocol
         return $this;
     }
 
-    /**
-     * @param array|string $value
-     */
+    /** @param array|string $value */
     public function addProperty(string $key, $value): self
     {
         $this->openGraphService->addProperty(

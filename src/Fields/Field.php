@@ -4,14 +4,10 @@ namespace ZFort\Seoable\Fields;
 
 abstract class Field
 {
-    /**
-     * @var \Illuminate\Database\Eloquent\Model
-     */
+    /** @var \Illuminate\Database\Eloquent\Model */
     protected $model;
 
-    /**
-     * @var string|array
-     */
+    /** @var string|array */
     protected $value;
 
     public function __construct($value, $model)
@@ -20,7 +16,10 @@ abstract class Field
         $this->value = $this->parseValue($value);
     }
 
-    protected function parseAttributesWithKeys($attributes)
+    /**
+     * @param array|string $attributes
+     */
+    protected function parseAttributesWithKeys($attributes): array
     {
         $result = [];
         if (is_array($attributes)) {
@@ -39,6 +38,10 @@ abstract class Field
         return $result;
     }
 
+    /**
+     * @param array|string $attributes
+     * @return array|string
+     */
     protected function parseAttributes($attributes)
     {
         $result = [];
@@ -61,5 +64,9 @@ abstract class Field
         return $this->value;
     }
 
+    /**
+     * @param array|string $value
+     * @return mixed
+     */
     abstract protected function parseValue($value);
 }

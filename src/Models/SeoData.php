@@ -7,18 +7,14 @@ use ZFort\Seoable\Contracts\SeoDataContract;
 
 class SeoData extends Model implements SeoDataContract
 {
-    /**
-     * @var array
-     */
+    /** @var array */
     protected $fillable = [
         'meta',
         'open_graph',
         'twitter',
     ];
 
-    /**
-     * @var array
-     */
+    /** @var array */
     protected $casts = [
         'meta' => 'array',
         'open_graph' => 'array',
@@ -37,26 +33,11 @@ class SeoData extends Model implements SeoDataContract
         return $this->morphTo();
     }
 
-    public function getMeta()
+    public function getSeoData(): array
     {
-        return $this->getAttribute('meta');
-    }
-
-    public function getOpenGraph()
-    {
-        return $this->getAttribute('open_graph');
-    }
-
-    public function getTwitterCard()
-    {
-        return $this->getAttribute('twitter');
-    }
-
-    public function getSeoData()//TODO: refactor
-    {
-        $meta = $this->getMeta();
-        $open_graph = $this->getOpenGraph();
-        $twitter_card = $this->getTwitterCard();
+        $meta = $this->meta;
+        $open_graph = $this->open_graph;
+        $twitter_card = $this->twitter_card;
 
         $meta += ['open_graph' => ! empty($open_graph) ? $open_graph : []];
 

@@ -48,9 +48,7 @@ class Meta extends Protocol
         return $this;
     }
 
-    /**
-     * @param array|string $value
-     */
+    /** @param array|string $value */
     public function setTitle($value): self
     {
         $this->seoTools->setTitle($this->parseValue($value, Title::class));
@@ -58,9 +56,7 @@ class Meta extends Protocol
         return $this;
     }
 
-    /**
-     * @param string $value
-     */
+    /** @param string $value */
     public function setTitleSeparator(string $value): self
     {
         $this->metaService->setTitleSeparator($this->parseValue($value, TitleSeparator::class));
@@ -68,9 +64,7 @@ class Meta extends Protocol
         return $this;
     }
 
-    /**
-     * @param array|string $value
-     */
+    /** @param array|string $value */
     public function setDescription($value): self
     {
         $this->seoTools->setDescription($this->parseValue($value, Description::class));
@@ -99,9 +93,7 @@ class Meta extends Protocol
         return $this;
     }
 
-    /**
-     * @param array|string $value
-     */
+    /** @param array|string $value */
     public function setKeywords($value): self
     {
         $this->metaService->setKeywords($this->parseValue($value, Keywords::class));

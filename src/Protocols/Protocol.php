@@ -12,18 +12,25 @@ abstract class Protocol
      * @var Model|\ZFort\Seoable\Contracts\Seoable
      */
     protected $model;
+
+    /** @var array */
     protected $modelSeoData;
 
+    /** @var \Artesaos\SEOTools\SEOMeta */
     protected $metaService = null;
+
+    /** @var \Artesaos\SEOTools\OpenGraph */
     protected $openGraphService = null;
+
+    /** @var \Artesaos\SEOTools\TwitterCards */
     protected $twitterCardService = null;
+
+    /** @var \Artesaos\SEOTools\SEOTools */
     protected $seoTools = null;
+
     protected $isRaw = false;
 
-    /**
-     * Protocol constructor.
-     * @param Model|\ZFort\Seoable\Contracts\Seoable $model
-     */
+    /** @param Model|\ZFort\Seoable\Contracts\Seoable $model */
     public function __construct(Seoable $model)//TODO: model refactor
     {
         $this->model = $model;
@@ -35,6 +42,7 @@ abstract class Protocol
         $this->twitterCardService = resolve('seotools.twitter'); //TODO: resolve method ability
     }
 
+    /** @param array|string $value */
     protected function parseValue($value, string $type)
     {
         return $this->getRawFields()[snake_case(class_basename($type))] ??
@@ -54,18 +62,12 @@ abstract class Protocol
         throw new BadMethodCallException;
     }
 
-    /**
-     * @return TwitterCard
-     */
-    public function twitter()
+    public function twitter(): TwitterCard
     {
         return new TwitterCard($this->model);
     }
 
-    /**
-     * @return OpenGraph
-     */
-    public function opengraph()
+    public function opengraph(): OpenGraph
     {
         return new OpenGraph($this->model);
     }

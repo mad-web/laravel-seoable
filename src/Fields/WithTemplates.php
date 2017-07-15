@@ -4,10 +4,10 @@ namespace ZFort\Seoable\Fields;
 
 trait WithTemplates
 {
-    protected function getTemplatePath($template_key)
+    protected function getTemplatePath(string $templateKey): string
     {
         return config('seoable.templates_path').
-            '.'.$template_key.'.'.
+            '.'.$templateKey.'.'.
             mb_strtolower(class_basename($this));
     }
 }
