@@ -10,55 +10,94 @@ use ZFort\Seoable\Fields\TwitterCard\Images;
 use ZFort\Seoable\Fields\TwitterCard\Values;
 use ZFort\Seoable\Fields\TwitterCard\Description;
 
+/**
+ * @method Meta setTitleRaw(array|string $value)
+ * @method Meta setDescriptionRaw(array|string $value)
+ * @method Meta setUrlRaw(string $value)
+ * @method Meta setSiteRaw(string $value)
+ * @method Meta setTypeRaw(string $value)
+ * @method Meta setImagesRaw(array|string $value)
+ * @method Meta setValuesRaw(array $value)
+ * @method Meta addValueRaw(string $key, mixed $value)
+ */
 class TwitterCard extends Protocol
 {
-    public function setTitle($value)
+    /**
+     * @param array|string $value
+     */
+    public function setTitle($value): self
     {
         $this->twitterCardService->setTitle($this->parseValue($value, Title::class));
 
         return $this;
     }
 
-    public function setDescription($value)
+    /**
+     * @param array|string $value
+     */
+    public function setDescription($value): self
     {
         $this->twitterCardService->setDescription($this->parseValue($value, Description::class));
 
         return $this;
     }
 
-    public function setUrl($value)
+    public function setUrl(string $value): self
     {
         $this->twitterCardService->setUrl($this->parseValue($value, Url::class));
 
         return $this;
     }
 
-    public function setSite($value)
+    public function setSite(string $value): self
     {
         $this->twitterCardService->setSite($this->parseValue($value, Site::class));
 
         return $this;
     }
 
-    public function setType($value)
+    public function setType(string $value): self
     {
         $this->twitterCardService->setType($this->parseValue($value, Type::class));
 
         return $this;
     }
 
-    public function setImages($value)
+    /**
+     * @param array|string $value
+     */
+    public function setImages($value): self
     {
         $this->twitterCardService->setImages($this->parseValue($value, Images::class));
 
         return $this;
     }
 
-    public function setValues($value)
+    public function addImage(string $url): self
+    {
+        $this->twitterCardService->setImages(
+            $this->parseValue($url, Images::class)
+        );
+
+        return $this;
+    }
+
+    public function setValues(array $value): self
     {
         foreach ($this->parseValue($value, Values::class) as $item) {
             $this->twitterCardService->addValue(...array_values($item));
         }
+
+        return $this;
+    }
+
+    public function addValue(string $key, $value): self
+    {
+        $this->twitterCardService->addValue(
+            ...array_values(
+                $this->parseValue([compact('key', 'value')], Values::class)[0]
+            )
+        );
 
         return $this;
     }

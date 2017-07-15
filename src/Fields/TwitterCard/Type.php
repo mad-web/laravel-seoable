@@ -8,6 +8,6 @@ class Type extends Field
 {
     protected function parseValue($value): string
     {
-        return $value;
+        return $this->model->getAttribute($value);
     }
 }
