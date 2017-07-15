@@ -11,14 +11,14 @@ use ZFort\Seoable\Fields\TwitterCard\Values;
 use ZFort\Seoable\Fields\TwitterCard\Description;
 
 /**
- * @method Meta setTitleRaw(array|string $value)
- * @method Meta setDescriptionRaw(array|string $value)
- * @method Meta setUrlRaw(string $value)
- * @method Meta setSiteRaw(string $value)
- * @method Meta setTypeRaw(string $value)
- * @method Meta setImagesRaw(array|string $value)
- * @method Meta setValuesRaw(array $value)
- * @method Meta addValueRaw(string $key, mixed $value)
+ * @method TwitterCard setTitleRaw(array|string $value)
+ * @method TwitterCard setDescriptionRaw(array|string $value)
+ * @method TwitterCard setUrlRaw(string $value)
+ * @method TwitterCard setSiteRaw(string $value)
+ * @method TwitterCard setTypeRaw(string $value)
+ * @method TwitterCard setImagesRaw(array|string $value)
+ * @method TwitterCard setValuesRaw(array $value)
+ * @method TwitterCard addValueRaw(string $key, mixed $value)
  */
 class TwitterCard extends Protocol
 {
