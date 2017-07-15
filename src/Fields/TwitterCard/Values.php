@@ -9,7 +9,13 @@ class Values extends Field
     protected function parseValue($value): array
     {
         foreach ($value as &$item) {
-            $item['value'] = $this->model->getAttribute($item['value']);
+            if (is_array($item['value'])) {
+                foreach ($item['value'] as &$property_value) {
+                    $property_value = $this->model->getAttribute($property_value);
+                }
+            } else {
+                $item['value'] = $this->model->getAttribute($item['value']);
+            }
         }
 
         return $value;
