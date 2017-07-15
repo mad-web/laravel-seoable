@@ -17,6 +17,7 @@ use ZFort\Seoable\Fields\TwitterCard\Description;
  * @method TwitterCard setSiteRaw(string $value)
  * @method TwitterCard setTypeRaw(string $value)
  * @method TwitterCard setImagesRaw(array|string $value)
+ * @method TwitterCard addImageRaw(string $url)
  * @method TwitterCard setValuesRaw(array $value)
  * @method TwitterCard addValueRaw(string $key, mixed $value)
  */
