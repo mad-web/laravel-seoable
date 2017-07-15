@@ -10,8 +10,8 @@ use ZFort\Seoable\Fields\OpenGraph\Properties;
 use ZFort\Seoable\Fields\OpenGraph\Description;
 
 /**
- * @method OpenGraph setTitleRaw(array|string $title)
- * @method OpenGraph setDescriptionRaw(array|string $description)
+ * @method OpenGraph setTitleRaw(string $title)
+ * @method OpenGraph setDescriptionRaw(string $description)
  * @method OpenGraph setUrlRaw(string $url)
  * @method OpenGraph setSiteNameRaw(string $name)
  * @method OpenGraph setImagesRaw(array|string $images)
