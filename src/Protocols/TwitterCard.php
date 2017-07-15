@@ -11,13 +11,12 @@ use ZFort\Seoable\Fields\TwitterCard\Values;
 use ZFort\Seoable\Fields\TwitterCard\Description;
 
 /**
- * @method TwitterCard setTitleRaw(array|string $value)
- * @method TwitterCard setDescriptionRaw(array|string $value)
+ * @method TwitterCard setTitleRaw(string $value)
+ * @method TwitterCard setDescriptionRaw(string $value)
  * @method TwitterCard setUrlRaw(string $value)
  * @method TwitterCard setSiteRaw(string $value)
  * @method TwitterCard setTypeRaw(string $value)
  * @method TwitterCard setImagesRaw(array|string $value)
- * @method TwitterCard addImageRaw(string $url)
  * @method TwitterCard setValuesRaw(array $value)
  * @method TwitterCard addValueRaw(string $key, mixed $value)
  */
@@ -74,15 +73,6 @@ class TwitterCard extends Protocol
         return $this;
     }
 
-    public function addImage(string $url): self
-    {
-        $this->twitterCardService->setImages(
-            $this->parseValue($url, Images::class)
-        );
-
-        return $this;
-    }
-
     public function setValues(array $value): self
     {
         foreach ($this->parseValue($value, Values::class) as $item) {
@@ -92,6 +82,9 @@ class TwitterCard extends Protocol
         return $this;
     }
 
+    /**
+     * @param array|string $value
+     */
     public function addValue(string $key, $value): self
     {
         $this->twitterCardService->addValue(
