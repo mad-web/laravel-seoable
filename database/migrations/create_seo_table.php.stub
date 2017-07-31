@@ -13,7 +13,7 @@ class CreateSeoTable extends Migration
      */
     public function up()
     {
-        Schema::create(config('seoable.table_names.seo_data'), function (Blueprint $table) {
+        Schema::create(config('seoable.seo_data_table'), function (Blueprint $table) {
             $table->increments('id');
             $table->morphs('seoable');
             $table->json('meta');
@@ -30,6 +30,6 @@ class CreateSeoTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists(config('seoable.table_names.seo_data'));
+        Schema::dropIfExists(config('seoable.seo_data_table'));
     }
 }

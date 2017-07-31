@@ -27,9 +27,9 @@ use ZFort\Seoable\Fields\Meta\TitleSeparator;
  */
 class Meta extends Protocol
 {
-    public function setMeta(array $value): self
+    public function setMeta(array $tags): self
     {
-        foreach ($this->parseValue($value, MetaTag::class) as $item) {
+        foreach ($this->parseValue($tags, MetaTag::class) as $item) {
             $this->metaService->addMeta(...array_values($item));
         }
 

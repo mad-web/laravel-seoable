@@ -16,9 +16,7 @@ abstract class Field
         $this->value = $this->parseValue($value);
     }
 
-    /**
-     * @param array|string $attributes
-     */
+    /** @param array|string $attributes */
     protected function parseAttributesWithKeys($attributes): array
     {
         $result = [];
@@ -56,9 +54,7 @@ abstract class Field
         return $result;
     }
 
-    /**
-     * @return string
-     */
+    /** @return mixed */
     public function getValue()
     {
         return $this->value;
