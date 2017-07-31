@@ -8,6 +8,6 @@ class Description extends TemplatableField
 {
     protected function getNestingLevel(): string
     {
-        return '.twitter_card';
+        return 'twitter_card';
     }
 }

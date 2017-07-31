@@ -10,15 +10,20 @@ abstract class TemplatableField extends Field
 
     public function __construct($value, $model, string $templateKey = '')
     {
-        parent::__construct($value, $model);
-
         $this->templateKey = $templateKey;
+
+        parent::__construct($value, $model);
     }
 
     protected function parseValue($value): string
     {
+        $nesting_level = $this->templateKey ?: $this->getNestingLevel();
+
         return trans(
-            $this->templateKey ?: $this->getTemplatePath(get_class($this->model) . $this->getNestingLevel()),
+            $this->getTemplatePath(
+                get_class($this->model) .
+                ($nesting_level ? '.' . $nesting_level : '')
+            ),
             $this->parseAttributesWithKeys($value)
         );
     }
