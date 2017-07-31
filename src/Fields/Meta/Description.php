@@ -2,15 +2,9 @@
 
 namespace ZFort\Seoable\Fields\Meta;
 
-use ZFort\Seoable\Fields\Field;
-use ZFort\Seoable\Fields\WithTemplates;
+use ZFort\Seoable\Fields\TemplatableField;
 
-class Description extends Field
+class Description extends TemplatableField
 {
-    use WithTemplates;
 
-    protected function parseValue($value): string
-    {
-        return trans($this->getTemplatePath(get_class($this->model)), $this->parseAttributesWithKeys($value));
-    }
 }
