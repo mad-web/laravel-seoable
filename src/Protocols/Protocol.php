@@ -5,6 +5,7 @@ namespace ZFort\Seoable\Protocols;
 use BadMethodCallException;
 use ZFort\Seoable\Contracts\Seoable;
 use Illuminate\Database\Eloquent\Model;
+use ZFort\Seoable\Fields\Field;
 
 abstract class Protocol
 {
@@ -40,11 +41,19 @@ abstract class Protocol
         $this->twitterCardService = resolve('seotools.twitter'); //TODO: resolve method ability
     }
 
-    /** @param array|string $value */
-    protected function parseValue($value, string $type)
+    /**
+     * @param array|string $value
+     * @param \ZFort\Seoable\Fields\Field|string $type
+     * @return mixed
+     */
+    protected function parseValue($value, $type)
     {
-        return $this->getRawFields()[snake_case(class_basename($type))] ??
-            ($this->isRaw ? $value : (new $type($value, $this->model))->getValue());
+        $raw_field = $this->getRawFields()[snake_case(class_basename($type))] ?? null;
+        if (! $raw_field and ! $this->isRaw) {
+            $type = $type instanceof Field ? $type : new $type($value, $this->model);
+        }
+
+        return $raw_field ?? ($this->isRaw ? $value : $type->getValue());
     }
 
     public function __call($name, $arguments)

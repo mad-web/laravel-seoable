@@ -49,9 +49,12 @@ class Meta extends Protocol
     }
 
     /** @param array|string $value */
-    public function setTitle($value): self
+    public function setTitle($value, string $templateKey = ''): self
     {
-        $this->seoTools->setTitle($this->parseValue($value, Title::class));
+        $this->seoTools->setTitle($this->parseValue(
+            $value,
+            $templateKey ? new Title($value, $this->model, $templateKey) : Title::class
+        ));
 
         return $this;
     }
@@ -65,9 +68,12 @@ class Meta extends Protocol
     }
 
     /** @param array|string $value */
-    public function setDescription($value): self
+    public function setDescription($value, string $templateKey = ''): self
     {
-        $this->seoTools->setDescription($this->parseValue($value, Description::class));
+        $this->seoTools->setDescription($this->parseValue(
+            $value,
+            $templateKey ? new Description($value, $this->model, $templateKey) : Description::class
+        ));
 
         return $this;
     }

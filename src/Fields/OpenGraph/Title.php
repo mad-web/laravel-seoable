@@ -2,18 +2,12 @@
 
 namespace ZFort\Seoable\Fields\OpenGraph;
 
-use ZFort\Seoable\Fields\Field;
-use ZFort\Seoable\Fields\WithTemplates;
+use ZFort\Seoable\Fields\TemplatableField;
 
-class Title extends Field
+class Title extends TemplatableField
 {
-    use WithTemplates;
-
-    protected function parseValue($value): string
+    protected function getNestingLevel(): string
     {
-        return trans(
-            $this->getTemplatePath(get_class($this->model).'.open_graph'),
-            $this->parseAttributesWithKeys($value)
-        );
+        return 'open_graph';
     }
 }
