@@ -25,7 +25,7 @@ class SeoData extends Model implements SeoDataContract
     {
         parent::__construct($attributes);
 
-        $this->setTable(config('seoable.table_names.seo_data'));
+        $this->setTable(config('seoable.seo_data_table'));
     }
 
     public function seoable()

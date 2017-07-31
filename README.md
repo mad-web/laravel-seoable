@@ -1,4 +1,4 @@
-# Very short description of the package
+# Laravel Seoable
 
 [![Latest Version on Packagist][ico-version]][link-packagist]
 [![Software License][ico-license]](LICENSE.md)
@@ -7,7 +7,17 @@
 [![Quality Score][ico-code-quality]][link-code-quality]
 [![Total Downloads][ico-downloads]][link-downloads]
 
-This is where your description should go. Try and limit it to a paragraph or two, and maybe throw in a mention of what PSRs you support to avoid any confusion with users and contributors.
+This package gives ability to
+* Mapping your Eloquent attributes to SEO meta tags
+* Set templates for _title_ and _description_ in lang file
+* Save custom SEO data for any Model in your application
+
+Working with:
+* Meta tags
+* Open Graph
+* Twitter Card
+
+Package based on [artesaos/seotools](https://github.com/artesaos/seotools), which provide ability to set meta tags in your template.
 
 ## Postcardware
 
@@ -16,18 +26,6 @@ You're free to use this package (it's [MIT-licensed](LICENSE.md)), but if it mak
 Our address is: Buchmy St, 1-B, 3rd floor, Kharkiv, Ukraine.
 
 We publish all received postcards [on our company website](https://zfort.com/en/opensource/postcards).
-
-## Structure
-
-If any of the following are applicable to your project, then the directory structure should follow industry best practises by being named the following.
-
-```
-bin/        
-config/
-src/
-tests/
-vendor/
-```
 
 ## Installation
 You can install the package via composer:
@@ -44,11 +42,229 @@ Now add the service provider in config/app.php file:
 ];
 ```
 
+You can publish the migration with:
+```bash
+$ php artisan vendor:publish --provider="ZFort\SocialAuth\SocialAuthServiceProvider" --tag="migrations"
+```
+
+You can publish the config-file with:
+```bash
+$ php artisan vendor:publish --provider="ZFort\SocialAuth\SocialAuthServiceProvider" --tag="config"
+```
+
+This is the contents of the published config/laravel-seoable.php config file:
+
+```php
+return [
+    /*
+    |--------------------------------------------------------------------------
+    | Seo Data Table
+    |--------------------------------------------------------------------------
+    |
+    | You can customize seo data storing table for your models
+    */
+    'seo_data_table' => 'seo_data',
+
+    /*
+    |--------------------------------------------------------------------------
+    | Seo Data Templates Path
+    |--------------------------------------------------------------------------
+    |
+    | Path to lang file where you can set property template
+    |
+    | Supported properties: "title", "description"
+    */
+    'templates_path' => 'seoable::seo',
+
+    /*
+    |--------------------------------------------------------------------------
+    | Seo Data Model
+    |--------------------------------------------------------------------------
+    |
+    | Model name for seo data table
+    */
+    'model' => \ZFort\Seoable\Models\SeoData::class
+];
+```
+
+To settings templates for _title_ and _description_ meta tags, you can publish the lang file by:
+```bash
+$ php artisan vendor:publish --provider="ZFort\SocialAuth\SocialAuthServiceProvider" --tag="lang"
+```
+or set your own in `templates_path` config property
+```php
+/*
+|--------------------------------------------------------------------------
+| Seo Data Templates Path
+|--------------------------------------------------------------------------
+|
+| Path to lang file where you can set property template
+|
+| Supported properties: "title", "description"
+*/
+'templates_path' => 'seoable::seo',
+```
+
 ## Usage
 
-``` php
-$skeleton = new ZFort\Skeleton();
-echo $skeleton->echoPhrase('Hello, ZFort!');
+The next step, you need to prepare your model by implementing the Interface,
+use a Trait and implement `seoable()` method like this
+```php
+class User implements Seoable
+{
+    use SeoableTrait;
+    ...
+    
+    public function seoable()
+    {
+    }
+}
+```
+
+### Tags setting
+Take the `seo()` method and setup fields by fluent api:
+```php
+public function seoable()
+{
+    $this->seo()
+        ->setTitle('full_name')
+        ->setDescription('full_name');
+}
+```
+
+After that setup templates like in the next example:
+```php
+return [
+    \App\User::class => [
+        'title' => 'This is page title for user profile :full_name',
+        'description' => 'This is page description for user profile :full_name',
+        'twitter_card' => [
+            'title' => 'Page title for twitter card :full_name',
+            'description' => 'Page description for twitter card :full_name'
+        ],
+        'open_graph' => [
+            'title' => 'Page title for open graph :full_name',
+            'description' => 'Page description for open graph :full_name'
+        ]
+    ]
+];
+```
+
+Also you can set raw property by adding a Raw postfix to the any kind of method
+```php
+public function seoable()
+{
+    $this->seo()
+        ->setTitleRaw('Some awesome title')
+        ->setDescriptionRaw('Some awesome description');
+}
+```
+
+You can pass multiple attributes and set custom names by putting an associative array
+```php
+public function seoable()
+{
+    $this->seo()
+        ->setTitle(['name' => 'full_name', 'address' => 'email'])
+        ->setDescription('full_name');
+}
+```
+
+### Tags generating
+Put the next row inside the `<head>` tag
+```html
+<head>
+...
+{!! resolve('seotools')->generate() !!}
+...
+</head>
+```
+or your can add Facade into the ```app.php``` config
+```php
+'aliases' => [
+    // other Facades ommited
+    'SEO' => Artesaos\SEOTools\Facades\SEOTools::class,
+]
+```
+and use it instead of `resolve('seotools')`
+```html
+<head>
+...
+{!! SEO::generate() !!}
+...
+</head>
+```
+To set default meta tags values just publish SEOTools config
+```php
+php artisan vendor:publish --provider="Artesaos\SEOTools\Providers\SEOToolsServiceProvider"
+```
+You can find full usage documentation on [SEOTools Readme](https://github.com/spatie/laravel-permission/blob/master/README.md)
+
+#### Full fluent api
+```php
+public function seoable()
+{
+    return $this->seo()
+        ->setTitle(['name', 'email'])
+        ->setDescription('name')
+        ->setCanonical('url')
+        ->setPrev('link')
+        ->setNext('link')
+        ->setKeywords('keywords')
+        ->setLanguages([
+            [
+                'lang' => 'ru',
+                'url' => 'lang_url' // Resolving by model attribute
+            ]
+        ])
+        ->addLanguage('en', 'lang_url')
+        ->addMeta('foo', 'bar')
+        ->setMeta([
+            [
+                'meta' => 'some',
+                'value' => 'name'
+            ],
+            [
+                'meta' => 'another',
+                'value' => 'tag'
+            ]
+        ])
+        ->twitter()
+            ->setTitle('name')
+            ->setDescription('name')
+            ->setUrl('url')
+            ->setSite('site_name')
+            ->setType('type')
+            ->setImages(['avatar', 'image'])
+            ->addValue('foo', ['name', 'name'])
+            ->setValues([
+                [
+                    'key' => 'foo',
+                    'value' => 'attribute'
+                ],
+                [
+                    'key' => 'another',
+                    'value' => 'another_attribute'
+                ]
+            ])
+        ->opengraph()
+            ->setTitle('name')
+            ->setDescription(['name', 'email'])
+            ->setUrl('url')
+            ->setSiteName('site_name')
+            ->setImages(['avatar', 'image'])
+            ->setProperties([
+                [
+                    'key' => 'foo',
+                    'value' => 'attribute'
+                ],
+                [
+                    'key' => 'another',
+                    'value' => 'another_attribute'
+                ]
+            ])
+            ->addProperty('foo', ['name', 'email']);
+}
 ```
 
 ## Changelog
