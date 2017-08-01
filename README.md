@@ -23,10 +23,6 @@ Package based on [artesaos/seotools](https://github.com/artesaos/seotools), whic
 
 You're free to use this package (it's [MIT-licensed](LICENSE.md)), but if it makes it to your production environment we highly appreciate you sending us a postcard from your hometown, mentioning which of our package(s) you are using.
 
-Our address is: Buchmy St, 1-B, 3rd floor, Kharkiv, Ukraine.
-
-We publish all received postcards [on our company website](https://zfort.com/en/opensource/postcards).
-
 ## Installation
 You can install the package via composer:
 
@@ -167,6 +163,41 @@ public function seoable()
     $this->seo()
         ->setTitle(['name' => 'full_name', 'address' => 'email'])
         ->setDescription('full_name');
+}
+```
+You have ability to save seo meta tags attached to the model by using `seoData()` relation
+```php
+$user = User::find(1)
+$user->seoData->update(['meta' => ['title' => 'some title']]);
+```
+Stored tags has higher priority then tags set in `seoable()` method *
+
+### Filling tags
+
+In your controller you can call `seoable()` method like this
+```php
+public function show($post)
+{
+    $post->seoable()
+    ...
+}
+```
+If you want to override some meta tags
+```php
+public function show($post)
+{
+    $post->seoable()->meta()
+    ->setTitleRaw('Some Post Title');
+    ...
+}
+```
+If you need to ignore stored tags in the database for the model
+```php
+public function show($post)
+{
+    $post->seoable()->meta()->ignoreStored()
+    ->setTitleRaw('Some Post Title');
+    ...
 }
 ```
 
