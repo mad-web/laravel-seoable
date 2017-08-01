@@ -6,5 +6,4 @@ use ZFort\Seoable\Fields\TemplatableField;
 
 class Title extends TemplatableField
 {
-
 }

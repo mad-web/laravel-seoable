@@ -3,9 +3,9 @@
 namespace ZFort\Seoable\Protocols;
 
 use BadMethodCallException;
+use ZFort\Seoable\Fields\Field;
 use ZFort\Seoable\Contracts\Seoable;
 use Illuminate\Database\Eloquent\Model;
-use ZFort\Seoable\Fields\Field;
 
 abstract class Protocol
 {
@@ -29,6 +29,8 @@ abstract class Protocol
 
     protected $isRaw = false;
 
+    protected $isStoredFieldsIgnores = false;
+
     /** @param Model|\ZFort\Seoable\Contracts\Seoable $model */
     public function __construct(Seoable $model)
     {
@@ -48,7 +50,10 @@ abstract class Protocol
      */
     protected function parseValue($value, $type)
     {
-        $raw_field = $this->getRawFields()[snake_case(class_basename($type))] ?? null;
+        $raw_field = $this->isStoredFieldsIgnores ?
+            null :
+            $this->getRawFields()[snake_case(class_basename($type))] ?? null;
+
         if (! $raw_field and ! $this->isRaw) {
             $type = $type instanceof Field ? $type : new $type($value, $this->model);
         }
@@ -77,6 +82,18 @@ abstract class Protocol
     public function opengraph(): OpenGraph
     {
         return new OpenGraph($this->model);
+    }
+
+    public function meta(): Meta
+    {
+        return new Meta($this->model);
+    }
+
+    public function ignoreStored()
+    {
+        $this->isStoredFieldsIgnores = true;
+
+        return $this;
     }
 
     abstract protected function getRawFields(): array;

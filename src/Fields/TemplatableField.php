@@ -2,7 +2,6 @@
 
 namespace ZFort\Seoable\Fields;
 
-
 abstract class TemplatableField extends Field
 {
     /** @var string */
@@ -21,8 +20,8 @@ abstract class TemplatableField extends Field
 
         return trans(
             $this->getTemplatePath(
-                get_class($this->model) .
-                ($nesting_level ? '.' . $nesting_level : '')
+                get_class($this->model).
+                ($nesting_level ? '.'.$nesting_level : '')
             ),
             $this->parseAttributesWithKeys($value)
         );
