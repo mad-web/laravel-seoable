@@ -1,0 +1,56 @@
+{
+    "name": "zfort/laravel-seoable",
+    "description": "Easy to map your eloquent fields to seo properties",
+    "type": "library",
+    "keywords": [
+        "zfort",
+        "laravel-seoable",
+        "seo"
+    ],
+    "homepage": "https://github.com/zfort/laravel-seoable",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "ZFort",
+            "email": "developers@zfort.com",
+            "homepage": "https://zfort.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^7.1",
+        "illuminate/support": "^5.4",
+        "artesaos/seotools": "^0.10.0"
+    },
+    "require-dev": {
+        "mockery/mockery": "^0.9.9",
+        "orchestra/testbench": "~3.0",
+        "phpunit/phpunit": "^6.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "ZFort\\Seoable\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "ZFort\\Seoable\\Test\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit"
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "ZFort\\Seoable\\SeoableServiceProvider"
+            ],
+            "aliases": {
+                "Skeleton": "ZFort\\Seoable\\SeoableFacade"
+            }
+        }
+    }
+}
