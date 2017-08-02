@@ -40,12 +40,12 @@ Now add the service provider in config/app.php file:
 
 You can publish the migration with:
 ```bash
-$ php artisan vendor:publish --provider="ZFort\SocialAuth\SocialAuthServiceProvider" --tag="migrations"
+$ php artisan vendor:publish --provider="ZFort\Seoable\SeoableServiceProvider" --tag="migrations"
 ```
 
 You can publish the config-file with:
 ```bash
-$ php artisan vendor:publish --provider="ZFort\SocialAuth\SocialAuthServiceProvider" --tag="config"
+$ php artisan vendor:publish --provider="ZFort\Seoable\SeoableServiceProvider" --tag="config"
 ```
 
 This is the contents of the published config/laravel-seoable.php config file:
@@ -85,7 +85,7 @@ return [
 
 To settings templates for _title_ and _description_ meta tags, you can publish the lang file by:
 ```bash
-$ php artisan vendor:publish --provider="ZFort\SocialAuth\SocialAuthServiceProvider" --tag="lang"
+$ php artisan vendor:publish --provider="ZFort\Seoable\SeoableServiceProvider" --tag="lang"
 ```
 or set your own in `templates_path` config property
 ```php
