@@ -1,6 +1,6 @@
 <?php
 
-namespace ZFort\Seoable\Test;
+namespace MadWeb\Seoable\Test;
 
 class SeoableTwitterCardTest extends TestCase
 {
@@ -22,12 +22,12 @@ class SeoableTwitterCardTest extends TestCase
         $this->setUpModel();
 
         $title = $this->app['translator']->trans(
-            'seo.'.\ZFort\Seoable\Test\Models\Post::class.'.twitter_card.title',
+            'seo.'.\MadWeb\Seoable\Test\Models\Post::class.'.twitter_card.title',
             ['title' => $this->testPost->title]
         );
 
         $description = $this->app['translator']->trans(
-            'seo.'.\ZFort\Seoable\Test\Models\Post::class.'.twitter_card.description',
+            'seo.'.\MadWeb\Seoable\Test\Models\Post::class.'.twitter_card.description',
             ['description' => $this->testPost->description]
         );
 

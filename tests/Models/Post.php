@@ -1,9 +1,9 @@
 <?php
 
-namespace ZFort\Seoable\Test\Models;
+namespace MadWeb\Seoable\Test\Models;
 
-use ZFort\Seoable\Contracts\Seoable;
-use ZFort\Seoable\Traits\SeoableTrait;
+use MadWeb\Seoable\Contracts\Seoable;
+use MadWeb\Seoable\Traits\SeoableTrait;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
 class Post extends Authenticatable implements Seoable

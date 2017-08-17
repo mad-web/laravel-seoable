@@ -1,6 +1,6 @@
 <?php
 
-namespace ZFort\Seoable\Test;
+namespace MadWeb\Seoable\Test;
 
 class SeoableMetaTest extends TestCase
 {
@@ -22,12 +22,12 @@ class SeoableMetaTest extends TestCase
         $this->setUpModel();
 
         $title = $this->app['translator']->trans(
-            'seo.'.\ZFort\Seoable\Test\Models\Post::class.'.title',
+            'seo.'.\MadWeb\Seoable\Test\Models\Post::class.'.title',
             ['title' => $this->testPost->title]
         );
 
         $description = $this->app['translator']->trans(
-            'seo.'.\ZFort\Seoable\Test\Models\Post::class.'.description',
+            'seo.'.\MadWeb\Seoable\Test\Models\Post::class.'.description',
             ['description' => $this->testPost->description]
         );
 

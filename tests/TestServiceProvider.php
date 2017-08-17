@@ -1,6 +1,6 @@
 <?php
 
-namespace ZFort\Seoable\Test;
+namespace MadWeb\Seoable\Test;
 
 use Illuminate\Support\ServiceProvider;
 

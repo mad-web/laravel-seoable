@@ -1,8 +1,8 @@
 <?php
 
-namespace ZFort\Seoable\Fields\OpenGraph;
+namespace MadWeb\Seoable\Fields\OpenGraph;
 
-use ZFort\Seoable\Fields\Field;
+use MadWeb\Seoable\Fields\Field;
 
 class Images extends Field
 {

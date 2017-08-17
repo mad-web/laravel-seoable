@@ -1,8 +1,8 @@
 <?php
 
-namespace ZFort\Seoable\Traits;
+namespace MadWeb\Seoable\Traits;
 
-use ZFort\Seoable\Protocols\Meta;
+use MadWeb\Seoable\Protocols\Meta;
 
 /**
  * This trait is for usage in models.

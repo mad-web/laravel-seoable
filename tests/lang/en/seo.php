@@ -1,7 +1,7 @@
 <?php
 
 return [
-    \ZFort\Seoable\Test\Models\Post::class => [
+    \MadWeb\Seoable\Test\Models\Post::class => [
         'title' => 'This is post :title',
         'description' => 'Description :description',
         'twitter_card' => [

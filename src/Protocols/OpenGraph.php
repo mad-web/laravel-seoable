@@ -1,13 +1,13 @@
 <?php
 
-namespace ZFort\Seoable\Protocols;
+namespace MadWeb\Seoable\Protocols;
 
-use ZFort\Seoable\Fields\OpenGraph\Url;
-use ZFort\Seoable\Fields\OpenGraph\Title;
-use ZFort\Seoable\Fields\OpenGraph\Images;
-use ZFort\Seoable\Fields\OpenGraph\SiteName;
-use ZFort\Seoable\Fields\OpenGraph\Properties;
-use ZFort\Seoable\Fields\OpenGraph\Description;
+use MadWeb\Seoable\Fields\OpenGraph\Url;
+use MadWeb\Seoable\Fields\OpenGraph\Title;
+use MadWeb\Seoable\Fields\OpenGraph\Images;
+use MadWeb\Seoable\Fields\OpenGraph\SiteName;
+use MadWeb\Seoable\Fields\OpenGraph\Properties;
+use MadWeb\Seoable\Fields\OpenGraph\Description;
 
 /**
  * @method OpenGraph setTitleRaw(string $title)

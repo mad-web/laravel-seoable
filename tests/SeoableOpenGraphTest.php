@@ -1,6 +1,6 @@
 <?php
 
-namespace ZFort\Seoable\Test;
+namespace MadWeb\Seoable\Test;
 
 class SeoableOpenGraphTestTest extends TestCase
 {
@@ -22,12 +22,12 @@ class SeoableOpenGraphTestTest extends TestCase
         $this->setUpModel();
 
         $title = $this->app['translator']->trans(
-            'seo.'.\ZFort\Seoable\Test\Models\Post::class.'.open_graph.title',
+            'seo.'.\MadWeb\Seoable\Test\Models\Post::class.'.open_graph.title',
             ['title' => $this->testPost->title]
         );
 
         $description = $this->app['translator']->trans(
-            'seo.'.\ZFort\Seoable\Test\Models\Post::class.'.open_graph.description',
+            'seo.'.\MadWeb\Seoable\Test\Models\Post::class.'.open_graph.description',
             ['description' => $this->testPost->description]
         );
 

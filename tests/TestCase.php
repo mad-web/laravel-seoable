@@ -1,10 +1,10 @@
 <?php
 
-namespace ZFort\Seoable\Test;
+namespace MadWeb\Seoable\Test;
 
 use Illuminate\Database\Schema\Blueprint;
 use Orchestra\Testbench\TestCase as OrchestraTestCase;
-use ZFort\Seoable\Test\Models\Post;
+use MadWeb\Seoable\Test\Models\Post;
 
 abstract class TestCase extends OrchestraTestCase
 {
@@ -42,8 +42,8 @@ abstract class TestCase extends OrchestraTestCase
     protected function getPackageProviders($app)
     {
         return [
-            \ZFort\Seoable\SeoableServiceProvider::class,
-            \ZFort\Seoable\Test\TestServiceProvider::class
+            \MadWeb\Seoable\SeoableServiceProvider::class,
+            \MadWeb\Seoable\Test\TestServiceProvider::class
         ];
     }
 
