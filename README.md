@@ -27,25 +27,25 @@ You're free to use this package (it's [MIT-licensed](LICENSE.md)), but if it mak
 You can install the package via composer:
 
 ```bash
-composer require zfort/laravel-seoable
+composer require mad-web/laravel-seoable
 ```
 
 Now add the service provider in config/app.php file:
 ```php
 'providers' => [
     // ...
-    ZFort\Seoable\SeoableServiceProvider::class,
+    MadWeb\Seoable\SeoableServiceProvider::class,
 ];
 ```
 
 You can publish the migration with:
 ```bash
-$ php artisan vendor:publish --provider="ZFort\Seoable\SeoableServiceProvider" --tag="migrations"
+$ php artisan vendor:publish --provider="MadWeb\Seoable\SeoableServiceProvider" --tag="migrations"
 ```
 
 You can publish the config-file with:
 ```bash
-$ php artisan vendor:publish --provider="ZFort\Seoable\SeoableServiceProvider" --tag="config"
+$ php artisan vendor:publish --provider="MadWeb\Seoable\SeoableServiceProvider" --tag="config"
 ```
 
 This is the contents of the published config/laravel-seoable.php config file:
@@ -79,13 +79,13 @@ return [
     |
     | Model name for seo data table
     */
-    'model' => \ZFort\Seoable\Models\SeoData::class
+    'model' => \MadWeb\Seoable\Models\SeoData::class
 ];
 ```
 
 To settings templates for _title_ and _description_ meta tags, you can publish the lang file by:
 ```bash
-$ php artisan vendor:publish --provider="ZFort\Seoable\SeoableServiceProvider" --tag="lang"
+$ php artisan vendor:publish --provider="MadWeb\Seoable\SeoableServiceProvider" --tag="lang"
 ```
 or set your own in `templates_path` config property
 ```php
@@ -314,32 +314,28 @@ Please see [CONTRIBUTING](CONTRIBUTING.md) and [CONDUCT](CONDUCT.md) for details
 
 ## Security
 
-If you discover any security related issues, please email developer@zfort.com instead of using the issue tracker.
+If you discover any security related issues, please email madweb.dev@gmail.com instead of using the issue tracker.
 
 ## Credits
 
-- [ZFort](https://github.com/zfort)
+- [Mad Web](https://github.com/mad-web)
 - [All Contributors](../../contributors)
-
-## About ZFort
-
-ZFort Group is a full-scale IT outsourcing service provider that has delivered premium web development, consulting and B2B solutions since 2000.
 
 ## License
 
 The MIT License (MIT). Please see [License File](LICENSE.md) for more information.
 
-[ico-version]: https://img.shields.io/packagist/v/zfort/laravel-seoable.svg?style=flat-square
+[ico-version]: https://img.shields.io/packagist/v/mad-web/laravel-seoable.svg?style=flat-square
 [ico-license]: https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square
-[ico-travis]: https://img.shields.io/travis/zfort/laravel-seoable/master.svg?style=flat-square
-[ico-scrutinizer]: https://img.shields.io/scrutinizer/coverage/g/zfort/laravel-seoable.svg?style=flat-square
-[ico-code-quality]: https://img.shields.io/scrutinizer/g/zfort/laravel-seoable.svg?style=flat-square
-[ico-downloads]: https://img.shields.io/packagist/dt/zfort/laravel-seoable.svg?style=flat-square
+[ico-travis]: https://img.shields.io/travis/mad-web/laravel-seoable/master.svg?style=flat-square
+[ico-scrutinizer]: https://img.shields.io/scrutinizer/coverage/g/mad-web/laravel-seoable.svg?style=flat-square
+[ico-code-quality]: https://img.shields.io/scrutinizer/g/mad-web/laravel-seoable.svg?style=flat-square
+[ico-downloads]: https://img.shields.io/packagist/dt/mad-web/laravel-seoable.svg?style=flat-square
 
-[link-packagist]: https://packagist.org/packages/zfort/laravel-seoable
-[link-travis]: https://travis-ci.org/zfort/laravel-seoable
-[link-scrutinizer]: https://scrutinizer-ci.com/g/zfort/laravel-seoable/code-structure
-[link-code-quality]: https://scrutinizer-ci.com/g/zfort/laravel-seoable
-[link-downloads]: https://packagist.org/packages/zfort/laravel-seoable
-[link-author]: https://github.com/zfort
+[link-packagist]: https://packagist.org/packages/mad-web/laravel-seoable
+[link-travis]: https://travis-ci.org/mad-web/laravel-seoable
+[link-scrutinizer]: https://scrutinizer-ci.com/g/mad-web/laravel-seoable/code-structure
+[link-code-quality]: https://scrutinizer-ci.com/g/mad-web/laravel-seoable
+[link-downloads]: https://packagist.org/packages/mad-web/laravel-seoable
+[link-author]: https://github.com/mad-web
 [link-contributors]: ../../contributors

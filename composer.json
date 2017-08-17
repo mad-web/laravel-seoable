@@ -1,25 +1,31 @@
 {
-    "name": "zfort/laravel-seoable",
+    "name": "mad-web/laravel-seoable",
     "description": "Easy to map your eloquent fields to seo properties",
     "type": "library",
     "keywords": [
-        "zfort",
+        "mad-web",
         "laravel-seoable",
-        "seo"
+        "seo",
+        "seotools",
+        "opengraph",
+        "twitter-card",
+        "webmasters",
+        "metatags"
     ],
-    "homepage": "https://github.com/zfort/laravel-seoable",
+    "homepage": "https://github.com/mad-web/laravel-seoable",
     "license": "MIT",
     "authors": [
         {
-            "name": "ZFort",
-            "email": "developers@zfort.com",
-            "homepage": "https://zfort.com",
+            "name": "Mad Web",
+            "email": "madweb.dev@gmail.com",
+            "homepage": "https://github.com/mad-web",
             "role": "Developer"
         }
     ],
     "require": {
-        "php": "^7.1",
+        "php": "^7.0",
         "illuminate/support": "^5.4",
+        "illuminate/database": "^5.4",
         "artesaos/seotools": "^0.10.0"
     },
     "require-dev": {
@@ -29,12 +35,12 @@
     },
     "autoload": {
         "psr-4": {
-            "ZFort\\Seoable\\": "src"
+            "MadWeb\\Seoable\\": "src"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "ZFort\\Seoable\\Test\\": "tests"
+            "MadWeb\\Seoable\\Test\\": "tests"
         }
     },
     "scripts": {
@@ -46,11 +52,8 @@
     "extra": {
         "laravel": {
             "providers": [
-                "ZFort\\Seoable\\SeoableServiceProvider"
-            ],
-            "aliases": {
-                "Skeleton": "ZFort\\Seoable\\SeoableFacade"
-            }
+                "MadWeb\\Seoable\\SeoableServiceProvider"
+            ]
         }
     }
 }

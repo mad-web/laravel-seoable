@@ -1,15 +1,15 @@
 <?php
 
-namespace ZFort\Seoable\Protocols;
+namespace MadWeb\Seoable\Protocols;
 
 use BadMethodCallException;
-use ZFort\Seoable\Fields\Field;
-use ZFort\Seoable\Contracts\Seoable;
+use MadWeb\Seoable\Fields\Field;
+use MadWeb\Seoable\Contracts\Seoable;
 use Illuminate\Database\Eloquent\Model;
 
 abstract class Protocol
 {
-    /** @var Model|\ZFort\Seoable\Contracts\Seoable */
+    /** @var Model|\MadWeb\Seoable\Contracts\Seoable */
     protected $model;
 
     /** @var array */
@@ -31,7 +31,7 @@ abstract class Protocol
 
     protected $isStoredFieldsIgnores = false;
 
-    /** @param Model|\ZFort\Seoable\Contracts\Seoable $model */
+    /** @param Model|\MadWeb\Seoable\Contracts\Seoable $model */
     public function __construct(Seoable $model)
     {
         $this->model = $model;
@@ -45,7 +45,7 @@ abstract class Protocol
 
     /**
      * @param array|string $value
-     * @param \ZFort\Seoable\Fields\Field|string $type
+     * @param \MadWeb\Seoable\Fields\Field|string $type
      * @return mixed
      */
     protected function parseValue($value, $type)

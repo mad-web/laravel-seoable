@@ -1,8 +1,8 @@
 <?php
 
-namespace ZFort\Seoable\Fields\TwitterCard;
+namespace MadWeb\Seoable\Fields\TwitterCard;
 
-use ZFort\Seoable\Fields\TemplatableField;
+use MadWeb\Seoable\Fields\TemplatableField;
 
 class Description extends TemplatableField
 {

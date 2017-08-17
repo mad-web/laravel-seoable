@@ -1,16 +1,16 @@
 <?php
 
-namespace ZFort\Seoable\Protocols;
+namespace MadWeb\Seoable\Protocols;
 
-use ZFort\Seoable\Fields\Meta\Next;
-use ZFort\Seoable\Fields\Meta\Prev;
-use ZFort\Seoable\Fields\Meta\Title;
-use ZFort\Seoable\Fields\Meta\MetaTag;
-use ZFort\Seoable\Fields\Meta\Keywords;
-use ZFort\Seoable\Fields\Meta\Canonical;
-use ZFort\Seoable\Fields\Meta\Languages;
-use ZFort\Seoable\Fields\Meta\Description;
-use ZFort\Seoable\Fields\Meta\TitleSeparator;
+use MadWeb\Seoable\Fields\Meta\Next;
+use MadWeb\Seoable\Fields\Meta\Prev;
+use MadWeb\Seoable\Fields\Meta\Title;
+use MadWeb\Seoable\Fields\Meta\MetaTag;
+use MadWeb\Seoable\Fields\Meta\Keywords;
+use MadWeb\Seoable\Fields\Meta\Canonical;
+use MadWeb\Seoable\Fields\Meta\Languages;
+use MadWeb\Seoable\Fields\Meta\Description;
+use MadWeb\Seoable\Fields\Meta\TitleSeparator;
 
 /**
  * @method Meta setMetaRaw(array $value)

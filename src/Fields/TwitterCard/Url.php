@@ -1,8 +1,8 @@
 <?php
 
-namespace ZFort\Seoable\Fields\TwitterCard;
+namespace MadWeb\Seoable\Fields\TwitterCard;
 
-use ZFort\Seoable\Fields\Field;
+use MadWeb\Seoable\Fields\Field;
 
 class Url extends Field
 {

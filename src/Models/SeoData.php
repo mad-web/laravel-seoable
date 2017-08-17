@@ -1,9 +1,9 @@
 <?php
 
-namespace ZFort\Seoable\Models;
+namespace MadWeb\Seoable\Models;
 
 use Illuminate\Database\Eloquent\Model;
-use ZFort\Seoable\Contracts\SeoDataContract;
+use MadWeb\Seoable\Contracts\SeoDataContract;
 
 class SeoData extends Model implements SeoDataContract
 {

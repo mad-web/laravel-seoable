@@ -1,8 +1,8 @@
 <?php
 
-namespace ZFort\Seoable\Fields\Meta;
+namespace MadWeb\Seoable\Fields\Meta;
 
-use ZFort\Seoable\Fields\TemplatableField;
+use MadWeb\Seoable\Fields\TemplatableField;
 
 class Description extends TemplatableField
 {

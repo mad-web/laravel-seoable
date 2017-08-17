@@ -1,10 +1,10 @@
 <?php
 
-namespace ZFort\Seoable\Test;
+namespace MadWeb\Seoable\Test;
 
+use MadWeb\Seoable\Test\Models\Post;
 use Illuminate\Database\Schema\Blueprint;
 use Orchestra\Testbench\TestCase as OrchestraTestCase;
-use ZFort\Seoable\Test\Models\Post;
 
 abstract class TestCase extends OrchestraTestCase
 {
@@ -18,6 +18,7 @@ abstract class TestCase extends OrchestraTestCase
 
         $this->setUpDatabase($this->app);
     }
+
     /**
      * Define environment setup.
      *
@@ -29,9 +30,9 @@ abstract class TestCase extends OrchestraTestCase
         // Setup default database to use sqlite :memory:
         $app['config']->set('database.default', 'testbench');
         $app['config']->set('database.connections.testbench', [
-            'driver'   => 'sqlite',
+            'driver' => 'sqlite',
             'database' => ':memory:',
-            'prefix'   => '',
+            'prefix' => '',
         ]);
     }
 
@@ -42,8 +43,8 @@ abstract class TestCase extends OrchestraTestCase
     protected function getPackageProviders($app)
     {
         return [
-            \ZFort\Seoable\SeoableServiceProvider::class,
-            \ZFort\Seoable\Test\TestServiceProvider::class
+            \MadWeb\Seoable\SeoableServiceProvider::class,
+            \MadWeb\Seoable\Test\TestServiceProvider::class,
         ];
     }
 
@@ -69,7 +70,7 @@ abstract class TestCase extends OrchestraTestCase
             'title' => 'Post title',
             'slug' => 'post-slug',
             'description' => 'Post description',
-            'image' => 'http://seoable.url/image.jpg'
+            'image' => 'http://seoable.url/image.jpg',
         ]);
     }
 
@@ -81,6 +82,7 @@ abstract class TestCase extends OrchestraTestCase
     {
         $dom = new \DOMDocument();
         $dom->loadHTML($string);
+
         return $dom;
     }
 

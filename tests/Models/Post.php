@@ -1,9 +1,9 @@
 <?php
 
-namespace ZFort\Seoable\Test\Models;
+namespace MadWeb\Seoable\Test\Models;
 
-use ZFort\Seoable\Contracts\Seoable;
-use ZFort\Seoable\Traits\SeoableTrait;
+use MadWeb\Seoable\Contracts\Seoable;
+use MadWeb\Seoable\Traits\SeoableTrait;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
 class Post extends Authenticatable implements Seoable
@@ -65,68 +65,4 @@ class Post extends Authenticatable implements Seoable
     {
         return 'article_type';
     }
-//    public function seoable()
-//    {
-//        return $this->seo()
-//            ->setTitle(['name', 'avatar'])
-//            ->setDescription('name')
-//            ->setCanonical('avatar')
-//            ->setPrev('name')
-//            ->setNext('avatar')
-//            ->setKeywords('keywords')
-//            ->setLanguages([
-//                [
-//                    'lang' => 'ru',
-//                    'url' => 'avatar'
-//                ]
-//            ])
-//            ->addLanguage('en', 'avatar')
-//            ->addMeta('foo', 'name')
-//            ->setMetaRaw([
-//                [
-//                    'meta' => 'some',
-//                    'value' => 'name'
-//                ],
-//                [
-//                    'meta' => 'new',
-//                    'value' => 'email'
-//                ]
-//            ])
-//            ->twitter()
-//            ->setTitleRaw('name')
-//            ->setDescription(['name', 'avatar'], 'some_desc')
-//            ->setUrl('avatar')
-//            ->setSite('avatar')
-//            ->setTypeRaw('article')
-//            ->setImages(['avatar', 'avatar'])
-//            ->addValue('foo', ['name', 'name'])
-//            ->setValuesRaw([
-//                [
-//                    'key' => 'name',
-//                    'value' => 'name'
-//                ],
-//                [
-//                    'key' => 'some',
-//                    'value' => 'avatar'
-//                ]
-//            ])
-//            ->opengraph()
-//            ->setTitle('name')
-//            ->setDescription(['name', 'avatar'])
-//            ->setUrl('avatar')
-//            ->setSiteName('name')
-//            ->setImages(['avatar', 'avatar'])
-//            ->setProperties([
-//                [
-//                    'key' => 'name',
-//                    'value' => 'name'
-//                ],
-//                [
-//                    'key' => 'some',
-//                    'value' => 'avatar'
-//                ]
-//            ])
-//            ->addProperty('foo', ['name', 'name']);
-
-//    }
 }
