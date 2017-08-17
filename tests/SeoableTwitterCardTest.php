@@ -66,12 +66,12 @@ class SeoableTwitterCardTest extends TestCase
             ->setValues([
                 [
                     'key' => 'name',
-                    'value' => 'title'
+                    'value' => 'title',
                 ],
                 [
                     'key' => 'some',
-                    'value' => 'slug'
-                ]
+                    'value' => 'slug',
+                ],
             ]);
     }
 }

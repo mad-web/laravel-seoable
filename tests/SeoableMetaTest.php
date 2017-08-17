@@ -35,7 +35,7 @@ class SeoableMetaTest extends TestCase
 
         $fullTitle = "$title - It's Over 9000!";
 
-        $fullHeader = '<title>' .$fullTitle. '</title>';
+        $fullHeader = '<title>'.$fullTitle.'</title>';
         $fullHeader .= "<meta name=\"description\" content=\"$description\">";
         $fullHeader .= "<meta name=\"keywords\" content=\"$keywords\">";
         $fullHeader .= "<meta name=\"foo\" content=\"{$this->testPost->title}\">";
@@ -67,20 +67,20 @@ class SeoableMetaTest extends TestCase
             ->setLanguages([
                 [
                     'lang' => 'ru',
-                    'url' => 'lang'
-                ]
+                    'url' => 'lang',
+                ],
             ])
             ->addLanguage('en', 'lang')
             ->addMeta('foo', 'title')
             ->setMeta([
                 [
                     'meta' => 'some',
-                    'value' => 'title'
+                    'value' => 'title',
                 ],
                 [
                     'meta' => 'new',
-                    'value' => 'title'
-                ]
+                    'value' => 'title',
+                ],
             ]);
     }
 }

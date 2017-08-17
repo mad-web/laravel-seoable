@@ -2,7 +2,7 @@
 
 namespace MadWeb\Seoable\Test;
 
-class SeoableOpenGraphTestTest extends TestCase
+class SeoableOpenGraphTest extends TestCase
 {
     protected $seoOpenGraph;
 
@@ -63,12 +63,12 @@ class SeoableOpenGraphTestTest extends TestCase
             ->setProperties([
                 [
                     'key' => 'name',
-                    'value' => 'title'
+                    'value' => 'title',
                 ],
                 [
                     'key' => 'foo',
-                    'value' => 'description'
-                ]
+                    'value' => 'description',
+                ],
             ])
             ->addProperty('bar', ['title', 'slug']);
     }

@@ -20,6 +20,6 @@ class TestServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->app->instance('path.lang', __DIR__ . DIRECTORY_SEPARATOR . 'lang');
+        $this->app->instance('path.lang', __DIR__.DIRECTORY_SEPARATOR.'lang');
     }
 }

@@ -6,14 +6,14 @@ return [
         'description' => 'Description :description',
         'twitter_card' => [
             'title' => 'Title from twitter card :title',
-            'description' => 'Twitter card description :description'
+            'description' => 'Twitter card description :description',
         ],
         'open_graph' => [
             'title' => 'Title from open_graph :title',
-            'description' => 'OpenGraph description :description'
+            'description' => 'OpenGraph description :description',
         ],
         'custom' => [
-            'description' => 'Custom description :description'
-        ]
-    ]
+            'description' => 'Custom description :description',
+        ],
+    ],
 ];
