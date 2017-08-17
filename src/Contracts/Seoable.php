@@ -1,6 +1,6 @@
 <?php
 
-namespace ZFort\Seoable\Contracts;
+namespace MadWeb\Seoable\Contracts;
 
 interface Seoable
 {

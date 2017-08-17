@@ -28,5 +28,5 @@ return [
     |
     | Model name for seo data table
     */
-    'model' => \ZFort\Seoable\Models\SeoData::class
+    'model' => \MadWeb\Seoable\Models\SeoData::class
 ];

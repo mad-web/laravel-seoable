@@ -1,6 +1,6 @@
 <?php
 
-namespace ZFort\Seoable\Fields;
+namespace MadWeb\Seoable\Fields;
 
 abstract class TemplatableField extends Field
 {

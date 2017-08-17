@@ -1,8 +1,8 @@
 <?php
 
-namespace ZFort\Seoable\Fields\OpenGraph;
+namespace MadWeb\Seoable\Fields\OpenGraph;
 
-use ZFort\Seoable\Fields\TemplatableField;
+use MadWeb\Seoable\Fields\TemplatableField;
 
 class Description extends TemplatableField
 {

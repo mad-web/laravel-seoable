@@ -1,6 +1,6 @@
 <?php
 
-namespace ZFort\Seoable\Test;
+namespace MadWeb\Seoable\Test;
 
 class SeoableMetaTest extends TestCase
 {
@@ -22,12 +22,12 @@ class SeoableMetaTest extends TestCase
         $this->setUpModel();
 
         $title = $this->app['translator']->trans(
-            'seo.'.\ZFort\Seoable\Test\Models\Post::class.'.title',
+            'seo.'.\MadWeb\Seoable\Test\Models\Post::class.'.title',
             ['title' => $this->testPost->title]
         );
 
         $description = $this->app['translator']->trans(
-            'seo.'.\ZFort\Seoable\Test\Models\Post::class.'.description',
+            'seo.'.\MadWeb\Seoable\Test\Models\Post::class.'.description',
             ['description' => $this->testPost->description]
         );
 
@@ -35,7 +35,7 @@ class SeoableMetaTest extends TestCase
 
         $fullTitle = "$title - It's Over 9000!";
 
-        $fullHeader = '<title>' .$fullTitle. '</title>';
+        $fullHeader = '<title>'.$fullTitle.'</title>';
         $fullHeader .= "<meta name=\"description\" content=\"$description\">";
         $fullHeader .= "<meta name=\"keywords\" content=\"$keywords\">";
         $fullHeader .= "<meta name=\"foo\" content=\"{$this->testPost->title}\">";
@@ -67,20 +67,20 @@ class SeoableMetaTest extends TestCase
             ->setLanguages([
                 [
                     'lang' => 'ru',
-                    'url' => 'lang'
-                ]
+                    'url' => 'lang',
+                ],
             ])
             ->addLanguage('en', 'lang')
             ->addMeta('foo', 'title')
             ->setMeta([
                 [
                     'meta' => 'some',
-                    'value' => 'title'
+                    'value' => 'title',
                 ],
                 [
                     'meta' => 'new',
-                    'value' => 'title'
-                ]
+                    'value' => 'title',
+                ],
             ]);
     }
 }
