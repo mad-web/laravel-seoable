@@ -24,13 +24,13 @@
     ],
     "require": {
         "php": "^7.0",
-        "illuminate/support": "^5.4",
-        "illuminate/database": "^5.4",
+        "illuminate/support": "~5.4.0",
+        "illuminate/database": "~5.4.0",
         "artesaos/seotools": "^0.10.0"
     },
     "require-dev": {
         "mockery/mockery": "^0.9.9",
-        "orchestra/testbench": "^3.4",
+        "orchestra/testbench": "~3.4.8",
         "phpunit/phpunit": "^5.7"
     },
     "autoload": {
