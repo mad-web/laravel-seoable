@@ -27,11 +27,20 @@ You're free to use this package (it's [MIT-licensed](LICENSE.md)), but if it mak
 ## Installation
 You can install the package via composer:
 
+_*For Laravel <= 5.4*_
+
+```bash
+composer require mad-web/laravel-seoable:1.0.0
+```
+
+_*For Laravel 5.5*_
+
 ```bash
 composer require mad-web/laravel-seoable
 ```
 
-Now add the service provider in config/app.php file:
+
+_*For Laravel <= 5.4*_ - Now add the service provider in config/app.php file:
 ```php
 'providers' => [
     // ...
