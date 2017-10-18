@@ -25,8 +25,8 @@ abstract class TemplatableField extends Field
         $nesting_level = $this->templateKey ?: $this->getNestingLevel();
 
         $template_path = $this->getTemplatePath(
-            get_class($this->model) .
-            ($nesting_level ? '.' . $nesting_level : '')
+            get_class($this->model).
+            ($nesting_level ? '.'.$nesting_level : '')
         );
 
         return $this->translator->has($template_path) ? $this->translator->trans(

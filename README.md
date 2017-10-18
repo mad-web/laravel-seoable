@@ -347,7 +347,7 @@ The MIT License (MIT). Please see [License File](LICENSE.md) for more informatio
 [link-packagist]: https://packagist.org/packages/mad-web/laravel-seoable
 [link-travis]: https://travis-ci.org/mad-web/laravel-seoable
 [link-scrutinizer]: https://scrutinizer-ci.com/g/mad-web/laravel-seoable/code-structure
-[link-style]: https://styleci.io/repos/100302673
+[link-style]: https://styleci.io/repos/100302677
 [link-code-quality]: https://scrutinizer-ci.com/g/mad-web/laravel-seoable
 [link-downloads]: https://packagist.org/packages/mad-web/laravel-seoable
 [link-author]: https://github.com/mad-web
