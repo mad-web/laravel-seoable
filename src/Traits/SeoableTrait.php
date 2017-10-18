@@ -20,7 +20,7 @@ trait SeoableTrait
 
         $SeoDataQuery = $this->hasOne(config('seoable.model'), 'seoable_id')->where('seoable_type', $class_name);
 
-        if (! $SeoDataQuery->exists()) {
+        if (! $SeoDataQuery->exists() and $this->exists) {
             $SeoData = $SeoDataQuery->make(['meta' => [], 'open_graph' => [], 'twitter' => []]);
             $SeoData->seoable_type = $class_name;
             $SeoData->save();
