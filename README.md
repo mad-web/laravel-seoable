@@ -155,6 +155,7 @@ return [
     ]
 ];
 ```
+If you don't declare it, the field value will be used by default
 
 Also you can set raw property by adding a Raw postfix to the any kind of method
 ```php
