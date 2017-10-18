@@ -4,6 +4,9 @@ All Notable changes to `laravel-seoable` will be documented in this file.
 
 Updates should follow the [Keep a CHANGELOG](http://keepachangelog.com/) principles.
 
+## 1.1.2 - 2017-10-18
+- Fixed seo data creation for non existing model
+
 ## 1.1.1 - 2017-10-18
 - Removed dependency from `trans` helper
 - Declare templates for translatable fields now is optional, field value will be used by default
