@@ -2,14 +2,20 @@
 
 namespace MadWeb\Seoable\Fields;
 
+use Illuminate\Container\Container;
+
 abstract class TemplatableField extends Field
 {
     /** @var string */
     protected $templateKey;
 
+    /** @var \Illuminate\Contracts\Translation\Translator */
+    protected $translator;
+
     public function __construct($value, $model, string $templateKey = '')
     {
         $this->templateKey = $templateKey;
+        $this->translator = Container::getInstance()->make('translator');
 
         parent::__construct($value, $model);
     }
@@ -18,13 +24,15 @@ abstract class TemplatableField extends Field
     {
         $nesting_level = $this->templateKey ?: $this->getNestingLevel();
 
-        return trans(
-            $this->getTemplatePath(
-                get_class($this->model).
-                ($nesting_level ? '.'.$nesting_level : '')
-            ),
-            $this->parseAttributesWithKeys($value)
+        $template_path = $this->getTemplatePath(
+            get_class($this->model) .
+            ($nesting_level ? '.' . $nesting_level : '')
         );
+
+        return $this->translator->has($template_path) ? $this->translator->trans(
+            $template_path,
+            $this->parseAttributesWithKeys($value)
+        ) : $this->model->getAttribute($value);
     }
 
     protected function getTemplatePath(string $templateKey): string
