@@ -9,6 +9,14 @@ use MadWeb\Seoable\Protocols\Meta;
  */
 trait SeoableTrait
 {
+    /** Cascade deleting for seo data */
+    public static function bootSeoableTrait()
+    {
+        static::deleting(function($item) {
+            $item->seoData()->delete();
+        });
+    }
+
     /**
      * Has one polymorphic relation to seo storage table.
      *
