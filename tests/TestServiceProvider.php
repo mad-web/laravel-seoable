@@ -6,8 +6,6 @@ use Illuminate\Support\ServiceProvider;
 
 class TestServiceProvider extends ServiceProvider
 {
-    protected $defer = true;
-
     /**
      * Bootstrap the application services.
      */
