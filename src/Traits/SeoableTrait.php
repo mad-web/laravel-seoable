@@ -12,7 +12,7 @@ trait SeoableTrait
     /** Cascade deleting for seo data */
     public static function bootSeoableTrait()
     {
-        static::deleting(function($item) {
+        static::deleting(function ($item) {
             $item->seoData()->delete();
         });
     }
