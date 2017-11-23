@@ -96,6 +96,6 @@ class TwitterCard extends Protocol
 
     protected function getRawFields(): array
     {
-        return $this->modelSeoData['twitter_card'];
+        return $this->modelSeoData['twitter_card'] ?? [];
     }
 }

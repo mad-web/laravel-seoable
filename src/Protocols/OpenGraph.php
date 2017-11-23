@@ -87,6 +87,6 @@ class OpenGraph extends Protocol
 
     protected function getRawFields(): array
     {
-        return $this->modelSeoData['open_graph'];
+        return $this->modelSeoData['open_graph'] ?? [];
     }
 }

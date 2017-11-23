@@ -16,17 +16,7 @@ trait SeoableTrait
      */
     public function seoData()
     {
-        $class_name = get_class($this);
-
-        $SeoDataQuery = $this->hasOne(config('seoable.model'), 'seoable_id')->where('seoable_type', $class_name);
-
-        if (! $SeoDataQuery->exists() and $this->exists) {
-            $SeoData = $SeoDataQuery->make(['meta' => [], 'open_graph' => [], 'twitter' => []]);
-            $SeoData->seoable_type = $class_name;
-            $SeoData->save();
-        }
-
-        return $SeoDataQuery;
+        return $this->morphOne(config('seoable.model'), 'seoable');
     }
 
     /**
@@ -36,7 +26,7 @@ trait SeoableTrait
      */
     public function getSeoData()
     {
-        return $this->seoData->getSeoData();
+        return $this->seoData()->exists() ? $this->seoData->getSeoData() : [];
     }
 
     protected function seo()
