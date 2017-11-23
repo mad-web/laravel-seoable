@@ -17,8 +17,8 @@ class CreateSeoTable extends Migration
             $table->increments('id');
             $table->morphs('seoable');
             $table->json('meta');
-            $table->json('open_graph');
-            $table->json('twitter');
+            $table->json('open_graph')->nullable();
+            $table->json('twitter')->nullable();
             $table->timestamps();
         });
     }
