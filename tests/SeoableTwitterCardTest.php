@@ -36,7 +36,7 @@ class SeoableTwitterCardTest extends TestCase
         $fullHeader .= "<meta name=\"twitter:description\" content=\"$description\">";
         $fullHeader .= "<meta name=\"twitter:url\" content=\"{$this->testPost->url}\">";
         $fullHeader .= "<meta name=\"twitter:site\" content=\"{$this->testPost->site}\">";
-        $fullHeader .= "<meta name=\"twitter:type\" content=\"{$this->testPost->type}\">";
+        $fullHeader .= "<meta name=\"twitter:card\" content=\"{$this->testPost->type}\">";
         $fullHeader .= "<meta name=\"twitter:foo0\" content=\"{$this->testPost->title}\">";
         $fullHeader .= "<meta name=\"twitter:foo1\" content=\"{$this->testPost->slug}\">";
         $fullHeader .= "<meta name=\"twitter:name\" content=\"{$this->testPost->title}\">";
