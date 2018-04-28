@@ -52,7 +52,7 @@ class SeoableMetaTest extends TestCase
 
     protected function generatedTags()
     {
-        return $this->seoMeta->generate();
+        return $this->seoMeta->generate(true);
     }
 
     protected function setUpModel()

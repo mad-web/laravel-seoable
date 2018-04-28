@@ -48,7 +48,7 @@ class SeoableOpenGraphTest extends TestCase
 
     protected function generatedTags()
     {
-        return $this->seoOpenGraph->generate();
+        return $this->seoOpenGraph->generate(true);
     }
 
     protected function setUpModel()

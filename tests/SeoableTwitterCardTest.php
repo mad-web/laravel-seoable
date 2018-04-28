@@ -49,7 +49,7 @@ class SeoableTwitterCardTest extends TestCase
 
     protected function generatedTags()
     {
-        return $this->seoTwitterCard->generate();
+        return $this->seoTwitterCard->generate(true);
     }
 
     protected function setUpModel()
