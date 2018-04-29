@@ -6,6 +6,7 @@ Updates should follow the [Keep a CHANGELOG](http://keepachangelog.com/) princip
 
 ## 1.2.0 - 2018-04-30
 - Laravel 5.6 support
+- `artesaos/seotools` main dependency upgraded to latest version
 - Fixed saving custom seo data into database
 - Added more testcases
 - CI configs updated
