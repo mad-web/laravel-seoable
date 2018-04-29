@@ -24,7 +24,7 @@ trait SeoableTrait
      */
     public function seoData()
     {
-        return $this->morphOne(config('seoable.model'), 'seoable');
+        return $this->morphOne(config('seoable.model'), 'seoable')->withDefault();
     }
 
     /**

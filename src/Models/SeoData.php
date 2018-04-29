@@ -50,4 +50,10 @@ class SeoData extends Model implements SeoDataContract
     {
         return $this->seoable_type;
     }
+
+    /** {@inheritdoc} */
+    public function update(array $attributes = [], array $options = [])
+    {
+        return $this->fill($attributes)->save($options);
+    }
 }
