@@ -2,7 +2,6 @@
 
 namespace MadWeb\Seoable\Test;
 
-
 use MadWeb\Seoable\Models\SeoData;
 
 class StoredMetaDataTest extends TestCase
@@ -32,7 +31,7 @@ class StoredMetaDataTest extends TestCase
 
         $this->testPost->seoData->update(['meta' => [
             'title' => $title,
-            'description' => $description
+            'description' => $description,
         ]]);
 
         $this->testPost->seoable()
@@ -50,7 +49,7 @@ class StoredMetaDataTest extends TestCase
     {
         $this->testPost->seoData->update(['meta' => [
             'title' => 'some title',
-            'description' => 'some description'
+            'description' => 'some description',
         ]]);
 
         $this->testPost->seoable()
@@ -79,7 +78,7 @@ class StoredMetaDataTest extends TestCase
     {
         $data = ['meta' => [
             'title' => 'some title',
-            'description' => 'some description'
+            'description' => 'some description',
         ]];
         $this->testPost->seoData->update($data);
 
@@ -87,9 +86,9 @@ class StoredMetaDataTest extends TestCase
             (new SeoData)->getTable(),
             [
                     'seoable_id' => $this->testPost->id,
-                    'seoable_type' => get_class($this->testPost)
+                    'seoable_type' => get_class($this->testPost),
             ] + [
-                'meta' => json_encode($data['meta'])
+                'meta' => json_encode($data['meta']),
             ]
         );
     }
@@ -101,8 +100,8 @@ class StoredMetaDataTest extends TestCase
             [
                 'meta' => [
                     'title' => 'some title',
-                    'description' => 'some description'
-                ]
+                    'description' => 'some description',
+                ],
             ]
         );
 
@@ -115,7 +114,7 @@ class StoredMetaDataTest extends TestCase
             (new SeoData)->getTable(),
             [
                 'seoable_id' => $post_id,
-                'seoable_type' => $post_class_name
+                'seoable_type' => $post_class_name,
             ]
         );
     }
