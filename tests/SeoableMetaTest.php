@@ -2,6 +2,8 @@
 
 namespace MadWeb\Seoable\Test;
 
+use BadMethodCallException;
+
 class SeoableMetaTest extends TestCase
 {
     protected $seoMeta;
@@ -48,6 +50,31 @@ class SeoableMetaTest extends TestCase
         $fullHeader .= "<link rel=\"alternate\" hreflang=\"en\" href=\"{$this->testPost->lang}\">";
 
         $this->setRightAssertion($fullHeader);
+    }
+
+    /** @test */
+    public function raw_properties()
+    {
+        $title = 'Some awesome title';
+
+        $description = 'Some awesome description';
+        $this->testPost->seoable()
+            ->setTitleRaw($title)
+            ->setDescriptionRaw($description);
+
+        $expectedMeta = '<title>'.$title.' - It\'s Over 9000!</title>';
+        $expectedMeta .= "<meta name=\"description\" content=\"$description\">";
+
+        $this->setRightAssertion($expectedMeta);
+    }
+
+    /** @test */
+    public function invalid_meta_method()
+    {
+        $this->expectException(BadMethodCallException::class);
+
+        $this->testPost->seoable()
+            ->setSomething();
     }
 
     protected function generatedTags()

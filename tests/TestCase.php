@@ -8,6 +8,7 @@ use Orchestra\Testbench\TestCase as OrchestraTestCase;
 
 abstract class TestCase extends OrchestraTestCase
 {
+    /** @var Post */
     protected $testPost;
 
     protected function setUp()
