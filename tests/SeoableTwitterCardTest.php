@@ -37,12 +37,12 @@ class SeoableTwitterCardTest extends TestCase
         $fullHeader .= "<meta name=\"twitter:url\" content=\"{$this->testPost->url}\">";
         $fullHeader .= "<meta name=\"twitter:site\" content=\"{$this->testPost->site}\">";
         $fullHeader .= "<meta name=\"twitter:card\" content=\"{$this->testPost->type}\">";
+        $fullHeader .= "<meta name=\"twitter:image0\" content=\"{$this->testPost->image}\">";
+        $fullHeader .= "<meta name=\"twitter:image1\" content=\"{$this->testPost->image}\">";
         $fullHeader .= "<meta name=\"twitter:foo0\" content=\"{$this->testPost->title}\">";
         $fullHeader .= "<meta name=\"twitter:foo1\" content=\"{$this->testPost->slug}\">";
         $fullHeader .= "<meta name=\"twitter:name\" content=\"{$this->testPost->title}\">";
         $fullHeader .= "<meta name=\"twitter:some\" content=\"{$this->testPost->slug}\">";
-        $fullHeader .= "<meta name=\"twitter:images0\" content=\"{$this->testPost->image}\">";
-        $fullHeader .= "<meta name=\"twitter:images1\" content=\"{$this->testPost->image}\">";
 
         $this->setRightAssertion($fullHeader);
     }
