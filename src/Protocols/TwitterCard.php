@@ -68,7 +68,7 @@ class TwitterCard extends Protocol
     /** @param array|string $value */
     public function setImages($value): self
     {
-        $this->twitterCardService->setImages($this->parseValue($value, Images::class));
+        $this->twitterCardService->setImage($this->parseValue($value, Images::class));
 
         return $this;
     }
