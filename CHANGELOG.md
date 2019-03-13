@@ -4,6 +4,10 @@ All Notable changes to `laravel-seoable` will be documented in this file.
 
 Updates should follow the [Keep a CHANGELOG](http://keepachangelog.com/) principles.
 
+## 2.0.0 - 2019-03-13
+- Laravel 5.8 support
+- Minimum requred php version upgraded to 7.1
+
 ## 1.2.2 - 2018-09-23
 - Laravel 5.7 support
 

@@ -9,7 +9,7 @@ class SeoableOpenGraphTest extends TestCase
     /**
      * {@inheritdoc}
      */
-    public function setUp()
+    public function setUp(): void
     {
         parent::setUp();
 
