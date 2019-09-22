@@ -2,8 +2,6 @@
 
 namespace MadWeb\Seoable\Test;
 
-use Artesaos\SEOTools\Facades\OpenGraph;
-
 class SeoableOpenGraphTest extends TestCase
 {
     protected $seoOpenGraph;
