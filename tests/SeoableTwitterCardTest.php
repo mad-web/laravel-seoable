@@ -21,12 +21,12 @@ class SeoableTwitterCardTest extends TestCase
     {
         $this->setUpModel();
 
-        $title = $this->app['translator']->trans(
+        $title = $this->app['translator']->get(
             'seo.'.\MadWeb\Seoable\Test\Models\Post::class.'.twitter_card.title',
             ['title' => $this->testPost->title]
         );
 
-        $description = $this->app['translator']->trans(
+        $description = $this->app['translator']->get(
             'seo.'.\MadWeb\Seoable\Test\Models\Post::class.'.twitter_card.description',
             ['description' => $this->testPost->description]
         );

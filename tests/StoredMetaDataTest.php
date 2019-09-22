@@ -57,12 +57,12 @@ class StoredMetaDataTest extends TestCase
             ->setTitle('title')
             ->setDescription('description');
 
-        $title = $this->app['translator']->trans(
+        $title = $this->app['translator']->get(
             'seo.'.\MadWeb\Seoable\Test\Models\Post::class.'.title',
             ['title' => $this->testPost->title]
         );
 
-        $description = $this->app['translator']->trans(
+        $description = $this->app['translator']->get(
             'seo.'.\MadWeb\Seoable\Test\Models\Post::class.'.description',
             ['description' => $this->testPost->description]
         );

@@ -29,7 +29,7 @@ abstract class TemplatableField extends Field
             ($nesting_level ? '.'.$nesting_level : '')
         );
 
-        return $this->translator->has($template_path) ? $this->translator->trans(
+        return $this->translator->has($template_path) ? $this->translator->get(
             $template_path,
             $this->parseAttributesWithKeys($value)
         ) : $this->model->getAttribute($value);

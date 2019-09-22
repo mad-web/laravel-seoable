@@ -2,6 +2,8 @@
 
 namespace MadWeb\Seoable\Test;
 
+use Artesaos\SEOTools\Facades\OpenGraph;
+
 class SeoableOpenGraphTest extends TestCase
 {
     protected $seoOpenGraph;
@@ -21,12 +23,12 @@ class SeoableOpenGraphTest extends TestCase
     {
         $this->setUpModel();
 
-        $title = $this->app['translator']->trans(
+        $title = $this->app['translator']->get(
             'seo.'.\MadWeb\Seoable\Test\Models\Post::class.'.open_graph.title',
             ['title' => $this->testPost->title]
         );
 
-        $description = $this->app['translator']->trans(
+        $description = $this->app['translator']->get(
             'seo.'.\MadWeb\Seoable\Test\Models\Post::class.'.open_graph.description',
             ['description' => $this->testPost->description]
         );
@@ -34,12 +36,12 @@ class SeoableOpenGraphTest extends TestCase
         $fullHeader = '';
         $fullHeader .= "<meta property=\"og:title\" content=\"$title\">";
         $fullHeader .= "<meta property=\"og:description\" content=\"$description\">";
-        $fullHeader .= "<meta property=\"og:url\" content=\"{$this->testPost->url}\">";
         $fullHeader .= "<meta property=\"og:site_name\" content=\"{$this->testPost->site}\">";
         $fullHeader .= "<meta property=\"og:name\" content=\"{$this->testPost->title}\">";
         $fullHeader .= "<meta property=\"og:foo\" content=\"{$this->testPost->description}\">";
         $fullHeader .= "<meta property=\"og:bar\" content=\"{$this->testPost->title}\">";
         $fullHeader .= "<meta property=\"og:bar\" content=\"{$this->testPost->slug}\">";
+        $fullHeader .= "<meta property=\"og:url\" content=\"{$this->testPost->url}\">";
         $fullHeader .= "<meta property=\"og:image\" content=\"{$this->testPost->image}\">";
         $fullHeader .= "<meta property=\"og:image\" content=\"{$this->testPost->image}\">";
 

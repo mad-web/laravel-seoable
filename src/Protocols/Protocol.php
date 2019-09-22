@@ -3,6 +3,7 @@
 namespace MadWeb\Seoable\Protocols;
 
 use BadMethodCallException;
+use Illuminate\Support\Str;
 use MadWeb\Seoable\Fields\Field;
 use MadWeb\Seoable\Contracts\Seoable;
 use Illuminate\Database\Eloquent\Model;
@@ -52,7 +53,7 @@ abstract class Protocol
     {
         $raw_field = $this->isStoredFieldsIgnores ?
             null :
-            $this->getRawFields()[snake_case(class_basename($type))] ?? null;
+            $this->getRawFields()[Str::snake(class_basename($type))] ?? null;
 
         if (! $raw_field and ! $this->isRaw) {
             $type = $type instanceof Field ? $type : new $type($value, $this->model);
@@ -63,7 +64,7 @@ abstract class Protocol
 
     public function __call($name, $arguments)
     {
-        if (ends_with($name, 'Raw')) {
+        if (Str::endsWith($name, 'Raw')) {
             $this->isRaw = true;
             $this->{mb_strstr($name, 'Raw', true)}(...$arguments);
             $this->isRaw = false;
