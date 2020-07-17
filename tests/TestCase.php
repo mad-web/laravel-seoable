@@ -2,8 +2,8 @@
 
 namespace MadWeb\Seoable\Test;
 
-use MadWeb\Seoable\Test\Models\Post;
 use Illuminate\Database\Schema\Blueprint;
+use MadWeb\Seoable\Test\Models\Post;
 use Orchestra\Testbench\TestCase as OrchestraTestCase;
 
 abstract class TestCase extends OrchestraTestCase

@@ -2,12 +2,12 @@
 
 namespace MadWeb\Seoable\Protocols;
 
-use MadWeb\Seoable\Fields\OpenGraph\Url;
-use MadWeb\Seoable\Fields\OpenGraph\Title;
-use MadWeb\Seoable\Fields\OpenGraph\Images;
-use MadWeb\Seoable\Fields\OpenGraph\SiteName;
-use MadWeb\Seoable\Fields\OpenGraph\Properties;
 use MadWeb\Seoable\Fields\OpenGraph\Description;
+use MadWeb\Seoable\Fields\OpenGraph\Images;
+use MadWeb\Seoable\Fields\OpenGraph\Properties;
+use MadWeb\Seoable\Fields\OpenGraph\SiteName;
+use MadWeb\Seoable\Fields\OpenGraph\Title;
+use MadWeb\Seoable\Fields\OpenGraph\Url;
 
 /**
  * @method OpenGraph setTitleRaw(string $title)

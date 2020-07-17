@@ -2,13 +2,13 @@
 
 namespace MadWeb\Seoable\Protocols;
 
-use MadWeb\Seoable\Fields\TwitterCard\Url;
-use MadWeb\Seoable\Fields\TwitterCard\Site;
-use MadWeb\Seoable\Fields\TwitterCard\Type;
-use MadWeb\Seoable\Fields\TwitterCard\Title;
-use MadWeb\Seoable\Fields\TwitterCard\Images;
-use MadWeb\Seoable\Fields\TwitterCard\Values;
 use MadWeb\Seoable\Fields\TwitterCard\Description;
+use MadWeb\Seoable\Fields\TwitterCard\Images;
+use MadWeb\Seoable\Fields\TwitterCard\Site;
+use MadWeb\Seoable\Fields\TwitterCard\Title;
+use MadWeb\Seoable\Fields\TwitterCard\Type;
+use MadWeb\Seoable\Fields\TwitterCard\Url;
+use MadWeb\Seoable\Fields\TwitterCard\Values;
 
 /**
  * @method TwitterCard setTitleRaw(string $value)

@@ -2,14 +2,14 @@
 
 namespace MadWeb\Seoable\Protocols;
 
+use MadWeb\Seoable\Fields\Meta\Canonical;
+use MadWeb\Seoable\Fields\Meta\Description;
+use MadWeb\Seoable\Fields\Meta\Keywords;
+use MadWeb\Seoable\Fields\Meta\Languages;
+use MadWeb\Seoable\Fields\Meta\MetaTag;
 use MadWeb\Seoable\Fields\Meta\Next;
 use MadWeb\Seoable\Fields\Meta\Prev;
 use MadWeb\Seoable\Fields\Meta\Title;
-use MadWeb\Seoable\Fields\Meta\MetaTag;
-use MadWeb\Seoable\Fields\Meta\Keywords;
-use MadWeb\Seoable\Fields\Meta\Canonical;
-use MadWeb\Seoable\Fields\Meta\Languages;
-use MadWeb\Seoable\Fields\Meta\Description;
 use MadWeb\Seoable\Fields\Meta\TitleSeparator;
 
 /**

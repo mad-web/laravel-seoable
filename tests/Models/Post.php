@@ -2,9 +2,9 @@
 
 namespace MadWeb\Seoable\Test\Models;
 
+use Illuminate\Foundation\Auth\User as Authenticatable;
 use MadWeb\Seoable\Contracts\Seoable;
 use MadWeb\Seoable\Traits\SeoableTrait;
-use Illuminate\Foundation\Auth\User as Authenticatable;
 
 class Post extends Authenticatable implements Seoable
 {

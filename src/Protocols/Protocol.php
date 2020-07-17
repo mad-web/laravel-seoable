@@ -3,10 +3,10 @@
 namespace MadWeb\Seoable\Protocols;
 
 use BadMethodCallException;
-use Illuminate\Support\Str;
-use MadWeb\Seoable\Fields\Field;
-use MadWeb\Seoable\Contracts\Seoable;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Str;
+use MadWeb\Seoable\Contracts\Seoable;
+use MadWeb\Seoable\Fields\Field;
 
 abstract class Protocol
 {
