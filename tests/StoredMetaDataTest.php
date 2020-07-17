@@ -85,8 +85,8 @@ class StoredMetaDataTest extends TestCase
         $this->assertDatabaseHas(
             (new SeoData)->getTable(),
             [
-                    'seoable_id' => $this->testPost->id,
-                    'seoable_type' => get_class($this->testPost),
+                'seoable_id' => $this->testPost->id,
+                'seoable_type' => get_class($this->testPost),
             ] + [
                 'meta' => json_encode($data['meta']),
             ]
