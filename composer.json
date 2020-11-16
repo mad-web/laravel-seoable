@@ -27,7 +27,7 @@
         "ext-json": "*",
         "illuminate/support": "^6.0 || ^7.0 || ^8.0",
         "illuminate/database": "^6.0 || ^7.0 || ^8.0",
-        "artesaos/seotools": "^0.18.0"
+        "artesaos/seotools": "^0.19.0"
     },
     "require-dev": {
         "mockery/mockery": "^1.3",
