@@ -4,6 +4,10 @@ All Notable changes to `laravel-seoable` will be documented in this file.
 
 Updates should follow the [Keep a CHANGELOG](http://keepachangelog.com/) principles.
 
+## 3.1.1 - 2020-11-18
+
+Fixed Laravel 8 support by upgrading artesaos/seotools to 0.19.0 version 
+
 ## 3.1.0 - 2020-09-24
 
 Laravel 8 support
