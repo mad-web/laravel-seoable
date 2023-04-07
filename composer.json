@@ -23,11 +23,11 @@
         }
     ],
     "require": {
-        "php": "^7.2.5|^8.0",
+        "php": "^7.2.5|^8.0|^8.1",
         "ext-json": "*",
-        "illuminate/support": "^6.0 || ^7.0 || ^8.0 || ^9.0",
+        "illuminate/support": "^6.0 || ^7.0 || ^8.0 || ^9.0 || ^9.0",
         "illuminate/database": "^6.0 || ^7.0 || ^8.0 || ^9.0",
-        "artesaos/seotools": "^0.22.0"
+        "artesaos/seotools": "^1.1.0"
     },
     "require-dev": {
         "mockery/mockery": "^1.3",
